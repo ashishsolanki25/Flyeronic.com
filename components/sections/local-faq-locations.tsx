@@ -5,45 +5,66 @@ import { HelpCircle, MapPin, ChevronDown, CheckCircle, ChevronUp } from "lucide-
 
 const faqs = [
   {
-    question: "Do you provide digital marketing services in Indore?",
-    answer: "Yes, Flyeronic is a premium digital marketing agency based in Indore, MP. We specialize in performance ads, search engine optimization (SEO), social media marketing, marketing automation, and website designing for local, national, and international brands.",
+    question: "Indore mein best digital marketing agency kaun si hai?",
+    answer: "Flyeronic Indore ki result-driven digital marketing agency hai jo Super Corridor pe based hai. Hum Facebook Ads, Google Ads, SEO, aur sales funnel automation mein specialize karte hain. Hamare clients — real estate, clinics, salons, aur food brands — ne average 3x leads growth dekhi hai pehle 60 dinon mein. Agar aap Indore mein apna business grow karna chahte hain, toh Flyeronic aapka sabse bharosemand partner hai.",
   },
   {
-    question: "Where is your office located in Indore?",
-    answer: "Our office is located at GRM Business Park, Super Corridor, Indore, MP. If you're a local business owner looking to scale, you are welcome to schedule a visit to our office for a personalized face-to-face marketing strategy session.",
+    question: "Kya Flyeronic real estate aur local businesses ke liye kaam karta hai?",
+    answer: "Haan. Hum Indore-Ujjain Road ke plotted township projects, clinics, salons, restaurants aur industrial brands ke liye kaam karte hain. Real estate ke liye hum WhatsApp campaigns, Facebook Lead Ads aur NRI-targeted Instagram content banate hain jo directly site visits aur bookings mein convert hoti hain.",
   },
   {
-    question: "What digital marketing services do you offer for Indore businesses?",
-    answer: "We offer end-to-end digital growth systems: Facebook & Google Ads (Performance Marketing), Local & National SEO to rank #1 on Google search, High-Converting Website Designing, Social Media Branding, Sales Funnels, and Lead Generation systems designed to get you customers predictably.",
+    question: "Google pe #1 rank karne mein kitna time lagta hai?",
+    answer: "Local SEO ke liye — jaise 'digital marketing agency Indore' — 3 se 6 mahine ka realistic timeline hai consistent kaam ke saath. Hum on-page SEO, Google Business Profile optimization, aur local citation building karte hain. Paid ads se results sirf 7 dinon mein shuru ho jaate hain.",
   },
   {
-    question: "Why should we choose Flyeronic over other digital marketing agencies in Indore, MP?",
-    answer: "Unlike agencies that focus on vanity metrics like 'likes' or 'shares', we focus strictly on business outcomes (Leads, ROI, and ROAS). We build automated marketing systems that run 24/7. Our transparent reporting ensures you know exactly where every rupee of your marketing budget goes.",
+    question: "Digital marketing agency hire karne mein kitna budget chahiye?",
+    answer: "Flyeronic ke saath aap Rs. 15,000/month se shuru kar sakte hain jisme social media + SEO included hai. Performance marketing ke liye minimum Rs. 10,000-15,000 ad spend alag hota hai. Hum transparent pricing dete hain — koi hidden charges nahi. Free strategy call mein aapke business ke liye best plan suggest karte hain.",
   },
   {
-    question: "How do we get started with your marketing services?",
-    answer: "You can start by booking a free 30-minute strategy call through our contact form. We will audit your current website and marketing campaigns, identify growth opportunities, and provide you with a customized roadmap tailored for your business.",
+    question: "Kya aap Ujjain, Dewas, Bhopal mein bhi services dete hain?",
+    answer: "Haan, hum poore Madhya Pradesh mein kaam karte hain — Ujjain, Dewas, Pithampur, Bhopal aur pan-India bhi. Digital marketing fully remote ho sakti hai, toh location koi barrier nahi. Hamare Indore office mein in-person meetings bhi available hain Super Corridor pe.",
+  },
+  {
+    question: "Pehla result kab dikhega aur kaise track karein?",
+    answer: "Paid ads se leads 7-14 dinon mein aani shuru ho jaati hain. SEO ke results 60-90 dinon mein dikhne lagte hain. Hum har client ko monthly report dete hain jisme leads count, ad spend, ROAS, aur keyword rankings clearly mention hote hain — sab kuch transparent.",
   },
 ];
 
 const locations = [
-  { name: "Super Corridor", desc: "Where our head office is located." },
-  { name: "Vijay Nagar", desc: "Serving tech startups and corporate offices." },
-  { name: "AB Road", desc: "Helping showrooms, retail, and real estate brands." },
-  { name: "Indore City", desc: "Full service area across the Indore metropolitan area." },
-  { name: "Ujjain", desc: "Supporting local businesses and tourism enterprises." },
-  { name: "Dewas", desc: "Providing industrial marketing and B2B lead generation." },
+  { name: "Super Corridor", desc: "Head office yahan hai — IT parks & real estate brands." },
+  { name: "Vijay Nagar", desc: "Tech startups, hospitals & corporate clients." },
+  { name: "AB Road", desc: "Showrooms, retail chains & real estate projects." },
+  { name: "Indore City", desc: "Poore Indore metropolitan area mein service." },
+  { name: "Ujjain", desc: "Local businesses, temples & tourism brands." },
+  { name: "Dewas", desc: "Industrial marketing & B2B lead generation." },
 ];
 
 export function LocalFaqLocations() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const toggleFaq = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map((faq) => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer,
+      },
+    })),
+  };
+
   return (
     <section id="faq-locations" className="py-20 lg:py-24 bg-white border-t border-border">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <div className="container">
 
         {/* Section Header */}
@@ -97,7 +118,7 @@ export function LocalFaqLocations() {
                     </button>
 
                     {isOpen && (
-                      <div className="px-6 pt-3 pb-5 text-sm leading-relaxed text-muted-foreground border-t border-border/40 bg-white">
+                      <div className="px-6 pt-4 pb-5 text-sm leading-7 text-muted-foreground border-t border-border/40 bg-primary/[0.02]">
                         {faq.answer}
                       </div>
                     )}
