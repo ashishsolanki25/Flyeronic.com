@@ -1,62 +1,67 @@
 "use client";
 
-import Image from "next/image";
-
 const testimonials = [
   {
     id: 1,
-    quote: "Flyeronic completely transformed our lead generation. We went from 20 leads/month to 120+ qualified leads in under 60 days. Game-changer.",
-    name: "Rahul Sharma",
-    role: "CEO of ScaleUp Digital",
-    img: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=687&auto=format&fit=crop",
+    quote: "Flyeronic ke Facebook aur Instagram ads se hamare township project ke site visits 3 guna ho gaye. Pehle sirf walk-ins pe depend the, ab har hafte qualified buyer leads aa rahe hain.",
+    name: "Rajesh Khanna",
+    role: "Director, Shreeji Realtors",
+    initials: "RK",
+    avatarBg: "#4A34B8",
     accent: "#6C3AFF",
   },
   {
     id: 2,
-    quote: "Their performance marketing team is insanely data-driven. 4.2x ROAS on Google Ads within the first month — we were shocked.",
-    name: "Arjun Mehta",
-    role: "CMO of NovaTech",
-    img: "https://images.unsplash.com/photo-1566753323558-f4e0952af115?q=80&w=1021&auto=format&fit=crop",
+    quote: "Clinic ki Google My Business optimization aur targeted ads ke baad naye patient inquiries doubling ho gayi. Ab reception pe calls rukte hi nahi.",
+    name: "Dr. Kavita Reddy",
+    role: "Founder, GlowLine Skin Clinic",
+    initials: "KR",
+    avatarBg: "#1A3A8F",
     accent: "#111111",
   },
   {
     id: 3,
-    quote: "Flyeronic built our entire sales funnel from scratch — ads, landing pages, email sequences, CRM. It now runs on autopilot and generates $2.1M in pipeline every quarter.",
-    name: "Sneha Joshi",
-    role: "CTO of PeakFunnels",
-    img: "https://images.unsplash.com/photo-1590086782957-93c06ef21604?q=80&w=687&auto=format&fit=crop",
+    quote: "Humari manufacturing unit ke liye B2B leads generate karna bahut mushkil tha. Flyeronic ne LinkedIn aur email campaigns se directly distributor inquiries la di — pehle 45 din me hi results mile.",
+    name: "Manish Agarwal",
+    role: "Director, Agarwal Industries",
+    initials: "MA",
+    avatarBg: "#1A3A8F",
     accent: "#2563EB",
   },
   {
     id: 4,
-    quote: "We automated 80% of our follow-up sequences. The ROI on Flyeronic's automation work paid back in 3 weeks.",
-    name: "Neha Verma",
-    role: "Founder of BrightPath",
-    img: "https://images.unsplash.com/photo-1512485694743-9c9538b4e6e0?q=80&w=687&auto=format&fit=crop",
+    quote: "Instagram reels aur local SEO ke through hamare salon ki booking calendar hamesha full rehta hai. New client walk-ins me bhi bahut fark aaya — pehle mahine se hi.",
+    name: "Pooja Malhotra",
+    role: "Owner, Bella Salon & Spa",
+    initials: "PM",
+    avatarBg: "#1A3A8F",
     accent: "#2563EB",
   },
   {
     id: 5,
-    quote: "SEO went from invisible to top-3 rankings for 14 competitive keywords. Content + tech SEO combo is unmatched.",
-    name: "Priya Kapoor",
-    role: "CEO of GrowthLab",
-    img: "https://images.unsplash.com/photo-1615109398623-88346a601842?q=80&w=687&auto=format&fit=crop",
+    quote: "Swiggy-Zomato visibility ke saath hamare khud ke website se bhi direct orders aane lage. Ad spend ka ROI clearly track ho raha hai — 3.8x return pehle quarter me.",
+    name: "Sanjay Iyer",
+    role: "Founder, Spice Route Foods",
+    initials: "SI",
+    avatarBg: "#222",
     accent: "#111111",
   },
   {
     id: 6,
-    quote: "The branding and creatives Flyeronic produced for us elevated our positioning. Clients actually started referencing our ads.",
-    name: "Amit Patel",
-    role: "CEO of UrbanNest",
-    img: "https://images.unsplash.com/photo-1563237023-b1e970526dcb?q=80&w=765&auto=format&fit=crop",
+    quote: "Flyeronic ne humara poora sales funnel banaya — ads, landing pages, WhatsApp automation. NRI investors tak seedha pahunch bani aur site visit bookings 2 mahine me hi bhar gaye.",
+    name: "Anita Desai",
+    role: "CEO, Skyline Estates",
+    initials: "AD",
+    avatarBg: "#4A34B8",
     accent: "#111111",
   },
   {
     id: 7,
-    quote: "Working with Flyeronic felt like having a 10-person marketing team. They moved fast, communicated clearly, and delivered results.",
-    name: "Dev Singh",
-    role: "Co-founder of CloudSync",
-    img: "https://images.unsplash.com/photo-1740102074295-c13fae3e4f8a?q=80&w=687&auto=format&fit=crop",
+    quote: "Flyeronic ke saath kaam karna ek dedicated marketing team rakhne jaisa laga. Fast execution, clear communication, aur results jo actually dikhe — highly recommend.",
+    name: "Dev Rathore",
+    role: "Co-founder, NexGen Clinics",
+    initials: "DR",
+    avatarBg: "#4A34B8",
     accent: "#6C3AFF",
   },
 ];
@@ -65,14 +70,16 @@ function TestimonialCard({
   quote,
   name,
   role,
-  img,
+  initials,
+  avatarBg,
   accent,
   delay = 0,
 }: {
   quote: string;
   name: string;
   role: string;
-  img: string;
+  initials: string;
+  avatarBg: string;
   accent: string;
   delay?: number;
 }) {
@@ -94,13 +101,13 @@ function TestimonialCard({
             <h3 className="font-semibold text-sm text-white leading-tight">{name}</h3>
             <p className="text-xs text-white/60 mt-0.5">{role}</p>
           </div>
-          <Image
-            src={img}
-            alt={name}
-            width={200}
-            height={200}
-            className="w-12 h-12 rounded-xl object-cover border-2 border-white/20 shrink-0"
-          />
+          {/* Initials Avatar */}
+          <div
+            className="w-12 h-12 rounded-xl border-2 border-white/20 shrink-0 flex items-center justify-center font-bold text-sm text-white"
+            style={{ backgroundColor: avatarBg }}
+          >
+            {initials}
+          </div>
         </div>
       </article>
     </div>
