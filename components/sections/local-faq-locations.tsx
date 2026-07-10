@@ -31,12 +31,16 @@ const faqs = [
 ];
 
 const locations = [
-  { name: "Super Corridor", desc: "Head office yahan hai — IT parks & real estate brands." },
-  { name: "Vijay Nagar", desc: "Tech startups, hospitals & corporate clients." },
-  { name: "AB Road", desc: "Showrooms, retail chains & real estate projects." },
-  { name: "Indore City", desc: "Poore Indore metropolitan area mein service." },
-  { name: "Ujjain", desc: "Local businesses, temples & tourism brands." },
-  { name: "Dewas", desc: "Industrial marketing & B2B lead generation." },
+  { name: "Indore", desc: "Humara home base — real estate, clinics, salons & startups." },
+  { name: "Bhopal", desc: "MP capital — government, corporate & education sector clients." },
+  { name: "Jabalpur", desc: "Industrial & education brands ke liye digital growth." },
+  { name: "Gwalior", desc: "North MP mein manufacturing & retail businesses." },
+  { name: "Ujjain", desc: "Tourism, temples & local business digital marketing." },
+  { name: "Dewas", desc: "Industrial B2B lead generation & brand awareness." },
+  { name: "Pithampur", desc: "Asia ke Detroit mein heavy industry & B2B clients." },
+  { name: "Ratlam", desc: "FMCG, pharma & trading businesses ka digital hub." },
+  { name: "Sagar", desc: "Central MP — education institutes & retail brands." },
+  { name: "Rewa", desc: "East MP mein healthcare & government sector marketing." },
 ];
 
 export function LocalFaqLocations() {
