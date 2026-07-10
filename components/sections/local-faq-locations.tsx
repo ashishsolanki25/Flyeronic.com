@@ -143,10 +143,10 @@ export function LocalFaqLocations() {
 
             <div className="bg-muted/10 border border-border rounded-3xl p-6 sm:p-7">
               <p className="text-sm text-muted-foreground leading-relaxed mb-5">
-                We provide digital marketing, website design, and SEO services to businesses throughout Malwa and MP:
+                Madhya Pradesh ki badi cities mein businesses ke liye digital marketing, SEO aur performance ads:
               </p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
+              <div className="grid grid-cols-2 sm:grid-cols-2 gap-3 mb-6">
                 {locations.map((loc) => (
                   <div
                     key={loc.name}
