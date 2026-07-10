@@ -1,0 +1,357 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+:root {
+  --background: #F8F7FF;
+  --foreground: #0A0A0F;
+  --primary: #6C3AFF;
+  --primary-light: #8B63FF;
+  --secondary: #00C9A7;
+  --accent-purple: #6C3AFF;
+  --accent-green: #00C9A7;
+  --accent-red: #FF6B6B;
+  --muted: #EAEAEE;
+  --muted-foreground: #6B6B75;
+  --border: #D1D1DB;
+  --card: #FFFFFF;
+  --card-foreground: #0A0A0F;
+  --radius: 16px;
+  --font-poppins: 'Poppins', sans-serif;
+  --font-inter: 'Poppins', sans-serif;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-light: var(--primary-light);
+  --color-secondary: var(--secondary);
+  --color-accent-purple: var(--accent-purple);
+  --color-accent-green: var(--accent-green);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --font-heading: var(--font-poppins);
+  --font-body: var(--font-poppins);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
+h2 { font-size: 2.5rem; }
+h3 { font-size: 1.5rem; }
+
+/* ─── Global Container ─── */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 80px;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 20px;
+  }
+}
+
+/* ─── Section Base ─── */
+section {
+  display: block;
+  padding: 80px 0;
+}
+
+/* ─── Scroll Reveal ─── */
+.reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Legacy .active support (keeps existing inline reveals working) */
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── Stagger Delays ─── */
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-400 { transition-delay: 400ms; }
+.delay-500 { transition-delay: 500ms; }
+
+img, svg {
+  max-width: 100%;
+  height: auto;
+}
+
+::selection {
+  background: var(--primary);
+  color: white;
+}
+
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted-foreground);
+}
+
+a, button {
+  transition-property: color, background-color, border-color, opacity, transform, box-shadow;
+  transition-duration: 200ms;
+  transition-timing-function: ease;
+}
+
+/* ─── Rounded-corner safety rule ─── */
+/* For pill/rounded-full badges: minimum px-4 py-1.5 ensures text never clips corners */
+/* For rounded-xl/2xl cards:    minimum 28px internal padding recommended             */
+/* For rounded-xl buttons:      minimum px-8 py-3.5 as set in AnimatedButton          */
+
+/* ─── Orbit animation ─── */
+@keyframes orbit-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.orbit-ring-1 { animation: orbit-spin 14s linear infinite; }
+.orbit-ring-2 { animation: orbit-spin 22s linear infinite reverse; }
+.orbit-ring-3 { animation: orbit-spin 30s linear infinite; }
+
+/* Counter-rotate icons so they stay upright */
+.orbit-ring-1 .orbit-icon { animation: orbit-spin 14s linear infinite reverse; }
+.orbit-ring-2 .orbit-icon { animation: orbit-spin 22s linear infinite; }
+.orbit-ring-3 .orbit-icon { animation: orbit-spin 30s linear infinite reverse; }
+
+/* ─── Marquee animations ─── */
+@keyframes marquee-left {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes marquee-right {
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+/* ─── WhatsApp FAB ─── */
+.whatsapp-fab {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 9999;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #25D366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Layered shadow: coloured glow + neutral depth */
+  box-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.15),
+    0 8px 24px rgba(37, 211, 102, 0.40);
+  transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.22s ease;
+  text-decoration: none;
+  outline: none;
+}
+
+/* Accessible focus ring */
+.whatsapp-fab:focus-visible {
+  outline: 3px solid #25D366;
+  outline-offset: 4px;
+}
+
+/* Icon size */
+.whatsapp-fab__icon {
+  width: 28px;
+  height: 28px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Hover: springy scale + deeper glow */
+.whatsapp-fab:hover {
+  transform: scale(1.13);
+  box-shadow:
+    0 6px 10px rgba(0, 0, 0, 0.18),
+    0 12px 32px rgba(37, 211, 102, 0.55);
+}
+
+/* Tap / press feedback */
+.whatsapp-fab:active {
+  transform: scale(0.93);
+  transition-duration: 0.1s;
+}
+
+/* ── Tooltip "Chat with us" label on hover ── */
+.whatsapp-fab::after {
+  content: "Chat with us";
+  position: absolute;
+  right: calc(100% + 12px);
+  top: 50%;
+  transform: translateY(-50%) translateX(6px);
+  background: #1a1a1a;
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 600;
+  white-space: nowrap;
+  padding: 5px 10px;
+  border-radius: 6px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.whatsapp-fab:hover::after {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
+/* ── Pulse ring ── */
+.whatsapp-fab__ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid rgba(37, 211, 102, 0.8);
+  animation: wa-pulse 2.4s ease-out infinite;
+  pointer-events: none;
+}
+
+@keyframes wa-pulse {
+  0%   { transform: scale(1);    opacity: 0.75; }
+  70%  { transform: scale(1.6);  opacity: 0; }
+  100% { transform: scale(1.6);  opacity: 0; }
+}
+
+/* ── Mobile: slightly smaller ── */
+@media (max-width: 640px) {
+  .whatsapp-fab {
+    width: 52px;
+    height: 52px;
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .whatsapp-fab__icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  /* Hide tooltip on touch screens */
+  .whatsapp-fab::after {
+    display: none;
+  }
+}
+
+/* ─── Toast notifications ─── */
+.toast-container {
+  position: fixed;
+  bottom: 100px;
+  right: 28px;
+  z-index: 9998;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  pointer-events: none;
+}
+
+.toast {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 280px;
+  max-width: 360px;
+  padding: 14px 18px;
+  border-radius: 14px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.4;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.14);
+  animation: toast-in 0.35s cubic-bezier(0.22,1,0.36,1) forwards;
+}
+
+.toast--success {
+  background: #ecfdf5;
+  border: 1px solid #6ee7b7;
+  color: #065f46;
+}
+
+.toast--error {
+  background: #fef2f2;
+  border: 1px solid #fca5a5;
+  color: #991b1b;
+}
+
+.toast--exit {
+  animation: toast-out 0.3s ease forwards;
+}
+
+@keyframes toast-in {
+  from { opacity: 0; transform: translateY(20px) scale(0.96); }
+  to   { opacity: 1; transform: translateY(0)   scale(1); }
+}
+
+@keyframes toast-out {
+  from { opacity: 1; transform: translateY(0) scale(1); }
+  to   { opacity: 0; transform: translateY(8px) scale(0.96); }
+}
+
