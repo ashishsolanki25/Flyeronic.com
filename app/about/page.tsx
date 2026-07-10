@@ -71,13 +71,13 @@ const team = [
   {
     initials: "RG",
     name: "Ram Gurjar",
-    role: "Visual Director & Cinematography Lead",
+    role: "Visual Director & Cinematography Head",
     bio: "Ram leads the visual production side of Flyeronic. From cinematic shoots to professional video editing, he focuses on creating high-quality visual content that captures attention and builds strong brand presence online.Former agency lead who has taken 30+ brands from page 3 to top-3 Google rankings.",
     bg: "bg-accent-purple",
   },
   {
     initials: "CS",
-    name: "Chaitanya Shrivastav",
+    name: "Chaitanya Shrivastava",
     role: "Creative Director & Client Strategy Head",
     bio: "Chaitanya manages the creative direction, script writing, and client coordination at Flyeronic. She works closely with brands to develop creative concepts, storytelling strategies, and smooth communication throughout every project.",
     bg: "bg-accent-green",
@@ -85,7 +85,7 @@ const team = [
   {
     initials: "TD",
     name: "Tina Dhoble",
-    role: "Design Director & Brand Visual Lead",
+    role: "Design Director & Brand Visual Head",
     bio: "Tina leads the visual design and brand identity development at Flyeronic. Her focus is on creating cohesive and visually appealing brand experiences — from logos and website design to complete brand systems. She works closely with clients to understand their vision and translate it into strong visual identities that stand out.",
     bg: "bg-[#6366F1]",
   },
