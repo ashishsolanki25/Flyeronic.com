@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     "sales funnels",
     "Google Ads agency",
     "Flyeronic",
-  ],
+  ],verification: { google: "Z8ZIkOozfMT-whF-_mcSXASLAF_QdgyQBJhJNGABWUk" },
   authors: [{ name: "Flyeronic", url: "https://flyeronic.com" }],
   creator: "Flyeronic",
   alternates: {
