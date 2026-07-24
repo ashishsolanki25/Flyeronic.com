@@ -121,11 +121,17 @@ export function LocalFaqLocations() {
                       </span>
                     </button>
 
-                    {isOpen && (
-                      <div className="px-6 pt-4 pb-5 text-sm leading-7 text-muted-foreground border-t border-border/40 bg-primary/[0.02]">
-                        {faq.answer}
+                    <div
+                      className={`grid transition-all duration-300 ease-in-out ${
+                        isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                      }`}
+                    >
+                      <div className="overflow-hidden">
+                        <div className="px-6 pt-4 pb-5 text-sm leading-7 text-muted-foreground border-t border-border/40 bg-primary/[0.02]">
+                          {faq.answer}
+                        </div>
                       </div>
-                    )}
+                    </div>
                   </div>
                 );
               })}
