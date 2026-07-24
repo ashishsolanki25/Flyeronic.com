@@ -38,9 +38,9 @@ export function HeroSection() {
             </div>
 
             <h1 className="text-foreground leading-[1.1] text-4xl md:text-5xl lg:text-6xl font-bold font-heading">
-              We Build Systems<br />
+              Indore&apos;s Digital Marketing Agency<br />
               <SparklesText
-                text="That Grow Brands"
+                text="Built to Scale Brands"
                 colors={{ first: "#6C3AFF", second: "#00C9A7" }}
                 className="text-primary font-bold inline-block"
                 sparklesCount={12}
