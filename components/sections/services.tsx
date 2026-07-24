@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { 
   LineChart, 
   Search, 
@@ -23,6 +24,7 @@ const services = [
     icon: <LineChart size={24} />,
     color: "from-blue-500 to-cyan-400",
     bg: "bg-blue-50 text-blue-600",
+    href: "/services/google-ads",
   },
   {
     title: "SEO",
@@ -30,6 +32,7 @@ const services = [
     icon: <Search size={24} />,
     color: "from-emerald-500 to-teal-400",
     bg: "bg-emerald-50 text-emerald-600",
+    href: "/services/seo",
   },
   {
     title: "Social Media Marketing",
@@ -37,6 +40,7 @@ const services = [
     icon: <Share2 size={24} />,
     color: "from-pink-500 to-rose-400",
     bg: "bg-pink-50 text-pink-600",
+    href: "/services/meta-ads",
   },
   {
     title: "Website Development",
@@ -44,6 +48,7 @@ const services = [
     icon: <MonitorSmartphone size={24} />,
     color: "from-purple-500 to-indigo-400",
     bg: "bg-purple-50 text-purple-600",
+    href: "/services/website-development",
   },
   {
     title: "Sales Funnels",
@@ -65,6 +70,7 @@ const services = [
     icon: <Bot size={24} />,
     color: "from-indigo-500 to-blue-500",
     bg: "bg-indigo-50 text-indigo-600",
+    href: "/services/marketing-automation",
   },
   {
     title: "Branding & Design",
@@ -79,6 +85,7 @@ const services = [
     icon: <PenTool size={24} />,
     color: "from-yellow-500 to-orange-400",
     bg: "bg-yellow-50 text-yellow-600",
+    href: "/services/content-creation",
   },
   {
     title: "Email Marketing",
@@ -100,6 +107,7 @@ const services = [
     icon: <Video size={24} />,
     color: "from-rose-500 to-red-400",
     bg: "bg-rose-50 text-rose-600",
+    href: "/services/brand-films",
   },
 ];
 
@@ -124,39 +132,57 @@ export function ServicesSection() {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
           style={{ gridAutoRows: "1fr" }}
         >
-          {services.map((service, index) => (
-            <div
-              key={service.title}
-              className={`reveal delay-${(index % 3 + 1) * 100} group relative bg-white rounded-2xl border border-border shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer overflow-hidden
-                flex flex-col h-full`}
-              style={{ padding: "28px" }}
-            >
-              {/* Fixed-size icon box */}
+          {services.map((service, index) => {
+            const CardInner = (
+              <>
+                {/* Fixed-size icon box */}
+                <div
+                  className={`rounded-xl flex items-center justify-center bg-gradient-to-br ${service.color} text-white shadow-lg group-hover:scale-110 transition-transform duration-300 shrink-0`}
+                  style={{ width: 56, height: 56 }}
+                >
+                  {service.icon}
+                </div>
+
+                {/* Title */}
+                <h3 className="font-bold text-secondary group-hover:text-primary transition-colors duration-300"
+                  style={{ fontSize: "1.1rem", marginTop: 16, marginBottom: 8 }}
+                >
+                  {service.title}
+                </h3>
+
+                {/* Description — flex-1 keeps all cards same height */}
+                <p className="text-muted-foreground leading-relaxed flex-1"
+                  style={{ fontSize: "0.9rem", lineHeight: 1.6, margin: 0 }}
+                >
+                  {service.description}
+                </p>
+
+                {/* Hover blur */}
+                <div className={`absolute -bottom-12 -right-12 w-32 h-32 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-10 blur-2xl rounded-full transition-opacity duration-500`} />
+              </>
+            );
+
+            const cardClassName = `reveal delay-${(index % 3 + 1) * 100} group relative bg-white rounded-2xl border border-border shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer overflow-hidden flex flex-col h-full`;
+
+            return service.href ? (
+              <Link
+                key={service.title}
+                href={service.href}
+                className={cardClassName}
+                style={{ padding: "28px" }}
+              >
+                {CardInner}
+              </Link>
+            ) : (
               <div
-                className={`rounded-xl flex items-center justify-center bg-gradient-to-br ${service.color} text-white shadow-lg group-hover:scale-110 transition-transform duration-300 shrink-0`}
-                style={{ width: 56, height: 56 }}
+                key={service.title}
+                className={cardClassName}
+                style={{ padding: "28px" }}
               >
-                {service.icon}
+                {CardInner}
               </div>
-
-              {/* Title */}
-              <h3 className="font-bold text-secondary group-hover:text-primary transition-colors duration-300"
-                style={{ fontSize: "1.1rem", marginTop: 16, marginBottom: 8 }}
-              >
-                {service.title}
-              </h3>
-
-              {/* Description — flex-1 keeps all cards same height */}
-              <p className="text-muted-foreground leading-relaxed flex-1"
-                style={{ fontSize: "0.9rem", lineHeight: 1.6, margin: 0 }}
-              >
-                {service.description}
-              </p>
-
-              {/* Hover blur */}
-              <div className={`absolute -bottom-12 -right-12 w-32 h-32 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-10 blur-2xl rounded-full transition-opacity duration-500`} />
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
