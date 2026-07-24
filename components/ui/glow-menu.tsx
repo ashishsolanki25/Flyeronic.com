@@ -29,7 +29,7 @@ const menuItems: MenuItem[] = [
   { label: "About",        href: "/about",         icon: <Info size={16} /> },
   { label: "Services",     href: "/#services",     icon: <Briefcase size={16} /> },
   { label: "Case Studies", href: "/#case-studies", icon: <FolderOpen size={16} /> },
-  { label: "Blog",         href: "/#blog",         icon: <BookOpen size={16} /> },
+  { label: "Blog",         href: "/blog",          icon: <BookOpen size={16} /> },
   { label: "Contact",      href: "/#contact",      icon: <Mail size={16} /> },
 ];
 
