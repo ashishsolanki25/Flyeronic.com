@@ -1,12 +1,10 @@
 import { GlowMenu } from "@/components/ui/glow-menu";
 import { Footer } from "@/components/sections/footer";
-import { FinalCTA } from "@/components/sections/final-cta";
 import {
   Target,
   Eye,
   Zap,
   Users,
-  TrendingUp,
   Star,
   ArrowRight,
 } from "lucide-react";

@@ -1,6 +1,6 @@
 "use client";
 
-import { TrendingUp, ArrowUpRight } from "lucide-react";
+import { TrendingUp } from "lucide-react";
 import {
   AnimatedCard,
   CardBody,

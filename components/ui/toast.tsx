@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useCallback, useContext, useState, useRef } from "react";
+import { createContext, useCallback, useContext, useEffect, useState, useRef } from "react";
 
 /* ─── Types ─── */
 interface Toast {
@@ -44,9 +44,10 @@ function ToastItem({ toast, onRemove }: { toast: Toast; onRemove: (id: string) =
   }, [toast.id, onRemove]);
 
   /* Auto-dismiss after 5 s */
-  useRef<ReturnType<typeof setTimeout> | undefined>(
-    setTimeout(dismiss, 5000)
-  );
+  useEffect(() => {
+    const timer = setTimeout(dismiss, 5000);
+    return () => clearTimeout(timer);
+  }, [dismiss]);
 
   return (
     <div

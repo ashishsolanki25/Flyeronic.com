@@ -46,9 +46,14 @@ export function SparklesText({
   );
 
   useEffect(() => {
+    // Sparkle positions are randomized and must only exist client-side —
+    // starting from an empty array on the server and populating here
+    // avoids an SSR/client hydration mismatch. This is an intentional
+    // exception to react-hooks/set-state-in-effect.
     const initial = Array.from({ length: sparklesCount }, (_, i) =>
       generateSparkle(i)
     );
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setSparkles(initial);
 
     const interval = setInterval(() => {

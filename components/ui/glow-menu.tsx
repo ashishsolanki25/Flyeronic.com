@@ -33,11 +33,24 @@ const menuItems: MenuItem[] = [
   { label: "Contact",      href: "/#contact",      icon: <Mail size={16} /> },
 ];
 
+function getPathActiveItem(pathname: string): string | null {
+  if (pathname.startsWith("/about")) return "About";
+  if (pathname.startsWith("/blog")) return "Blog";
+  if (pathname.startsWith("/services")) return "Services";
+  if (pathname.startsWith("/locations")) return "Services";
+  return null;
+}
+
 export function GlowMenu() {
-  const [activeItem, setActiveItem] = useState("Home");
+  const [homeHashItem, setHomeHashItem] = useState("Home");
   const [isScrolled, setIsScrolled]   = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const pathname = usePathname();
+
+  // Route-based highlight (Services/Blog/About/city pages) — derived
+  // directly from the current path, no effect needed.
+  const pathActiveItem = getPathActiveItem(pathname);
+  const activeItem = pathActiveItem ?? homeHashItem;
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -46,21 +59,19 @@ export function GlowMenu() {
   }, []);
 
   useEffect(() => {
-    if (pathname === "/about") {
-      setActiveItem("About");
-    } else if (pathname === "/") {
-      const hash = window.location.hash;
-      const found = menuItems.find(item => item.href === `/${hash}`);
-      if (found) {
-        setActiveItem(found.label);
-      } else {
-        setActiveItem("Home");
-      }
-    }
+    // Only the homepage needs hash-based highlighting (e.g. landing
+    // directly on flyeronic.com/#services) — this reads the browser's
+    // URL hash, which isn't available from usePathname() alone.
+    if (pathname !== "/") return;
+    const hash = window.location.hash;
+    const found = menuItems.find(item => item.href === `/${hash}`);
+    // Syncing from the browser's URL hash, which usePathname() doesn't expose.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setHomeHashItem(found ? found.label : "Home");
   }, [pathname]);
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, item: MenuItem) => {
-    setActiveItem(item.label);
+    setHomeHashItem(item.label);
     setIsMobileOpen(false);
 
     if (item.href.startsWith("/#") && pathname === "/") {
