@@ -9,6 +9,20 @@ export interface CityData {
 
 export const cities: CityData[] = [
   {
+    slug: "indore",
+    name: "Indore",
+    tagline: "Our Home Base — Full-Service Digital Marketing",
+    focus: "real estate, clinics, salons, restaurants, and D2C brands across every part of the city",
+    intro:
+      "Indore is where Flyeronic is based — our office sits on Super Corridor, and we work with businesses across every part of the city, from Vijay Nagar and Palasia to Rajwada and Indore-Ujjain Road. Being local means faster turnarounds, in-person meetings when you want them, and a real understanding of what works for Indore's market — not a generic playbook applied from outside.",
+    highlights: [
+      "In-person strategy meetings at our Super Corridor office",
+      "Deep local market knowledge across Vijay Nagar, Palasia, Rajwada & beyond",
+      "Full-service SEO, paid ads, automation, and content — all under one roof",
+      "50+ Indore brands grown with a 4.9/5 client rating",
+    ],
+  },
+  {
     slug: "bhopal",
     name: "Bhopal",
     tagline: "Government, Corporate & Education Sector Marketing",
