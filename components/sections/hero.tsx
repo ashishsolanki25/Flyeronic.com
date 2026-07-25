@@ -6,7 +6,7 @@ import { AnimatedButton } from "@/components/ui/animated-button";
 
 export function HeroSection() {
   return (
-    <section id="home" className="relative min-h-screen flex items-center overflow-hidden bg-background">
+    <section id="home" className="relative flex items-center overflow-hidden bg-background">
       {/* Background layers */}
       <div className="absolute inset-0 pointer-events-none">
         {/* Grid pattern */}
