@@ -55,6 +55,7 @@ const services = [
 const company = [
   { label: "About Us",     href: "/about" },
   { label: "Our Services", href: "/#services" },
+  { label: "Digital Marketing in Indore", href: "/locations/indore" },
   { label: "Case Studies", href: "/#case-studies" },
   { label: "Blog",         href: "/blog" },
   { label: "Careers",      href: "#" },

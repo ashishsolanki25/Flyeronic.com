@@ -2,6 +2,7 @@ import { GlowMenu } from "@/components/ui/glow-menu";
 import { Footer } from "@/components/sections/footer";
 import { FinalCTA } from "@/components/sections/final-cta";
 import { AnimatedButton } from "@/components/ui/animated-button";
+import { BrandFilmIllustration } from "@/components/ui/service-illustrations";
 import {
   Film,
   Package,
@@ -73,25 +74,34 @@ export default function BrandFilmsPage() {
     <>
       <GlowMenu />
       <main className="pt-24">
-        <section className="py-24 bg-gradient-to-br from-[#f0eeff] via-[#e8f4ff] to-[#edfff8] text-center">
-          <div className="container max-w-3xl mx-auto">
-            <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
-              Brand Film Production
-            </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-heading text-foreground leading-tight mb-6">
-              Brand Film Production Company in Indore
-              <br />
-              <span className="text-primary">Stories That Build Trust</span>
-            </h1>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-              From scripting to final edit, we produce cinematic brand films,
-              corporate videos, and product films that make your brand
-              memorable.
-            </p>
-            <AnimatedButton href="/#contact" variant="primary">
-              Discuss Your Brand Film
-              <ArrowRight size={16} />
-            </AnimatedButton>
+        <section className="py-24 bg-gradient-to-br from-[#f0eeff] via-[#e8f4ff] to-[#edfff8]">
+          <div className="container">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="text-center lg:text-left">
+                <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
+                  Brand Film Production
+                </span>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-heading text-foreground leading-tight mb-6">
+                  Brand Film Production Company in Indore
+                  <br />
+                  <span className="text-primary">Stories That Build Trust</span>
+                </h1>
+                <p className="text-lg text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-8">
+                  From scripting to final edit, we produce cinematic brand films,
+                  corporate videos, and product films that make your brand
+                  memorable.
+                </p>
+                <AnimatedButton href="/#contact" variant="primary">
+                  Discuss Your Brand Film
+                  <ArrowRight size={16} />
+                </AnimatedButton>
+              </div>
+              <div className="flex items-center justify-center">
+                <div className="relative w-full max-w-md">
+                  <BrandFilmIllustration />
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 

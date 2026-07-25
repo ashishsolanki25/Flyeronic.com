@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { HelpCircle, MapPin, ChevronDown, CheckCircle, ChevronUp } from "lucide-react";
 
 const faqs = [
@@ -154,16 +155,17 @@ export function LocalFaqLocations() {
 
               <div className="grid grid-cols-2 sm:grid-cols-2 gap-3 mb-6">
                 {locations.map((loc) => (
-                  <div
+                  <Link
                     key={loc.name}
-                    className="flex gap-2.5 items-start bg-white rounded-xl border border-border/60 hover:border-primary/20 transition-all p-3.5"
+                    href={`/locations/${loc.name.toLowerCase()}`}
+                    className="flex gap-2.5 items-start bg-white rounded-xl border border-border/60 hover:border-primary/40 hover:shadow-sm transition-all p-3.5"
                   >
                     <CheckCircle className="text-primary shrink-0 mt-0.5" size={15} />
                     <div>
                       <h4 className="text-xs sm:text-sm font-bold text-foreground leading-tight">{loc.name}</h4>
                       <p className="text-[11px] text-muted-foreground mt-1 leading-snug">{loc.desc}</p>
                     </div>
-                  </div>
+                  </Link>
                 ))}
               </div>
 

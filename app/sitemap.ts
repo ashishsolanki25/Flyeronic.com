@@ -1,6 +1,14 @@
 import { MetadataRoute } from "next";
+import { cities } from "@/lib/city-data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const cityEntries: MetadataRoute.Sitemap = cities.map((city) => ({
+    url: `https://flyeronic.com/locations/${city.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly",
+    priority: 0.6,
+  }));
+
   return [
     {
       url: "https://flyeronic.com",
@@ -80,5 +88,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.6,
     },
+    ...cityEntries,
   ];
 }
