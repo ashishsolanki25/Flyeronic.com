@@ -3,7 +3,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import {
-  Globe2,
   Mail,
   Phone,
   MapPin,
@@ -44,12 +43,12 @@ const socials = [
 ];
 
 const services = [
-  "Performance Marketing",
-  "SEO & Content",
-  "Social Media Marketing",
-  "Website Development",
-  "Lead Generation",
-  "Marketing Automation",
+  { label: "SEO & Content",           href: "/services/seo" },
+  { label: "Performance Marketing",   href: "/services/google-ads" },
+  { label: "Social Media Marketing",  href: "/services/meta-ads" },
+  { label: "Website Development",     href: "/services/website-development" },
+  { label: "Marketing Automation",    href: "/services/marketing-automation" },
+  { label: "Content Creation",        href: "/services/content-creation" },
 ];
 
 const company = [
@@ -121,14 +120,14 @@ export function Footer() {
               Services
             </h4>
             <ul className="space-y-3.5">
-              {services.map((service) => (
-                <li key={service}>
+              {services.map(({ label, href }) => (
+                <li key={label}>
                   <Link
-                    href="/#services"
+                    href={href}
                     className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200 flex items-center group"
                   >
                     <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-primary to-violet-500 mr-2 opacity-0 group-hover:opacity-100 transition-opacity shrink-0" />
-                    {service}
+                    {label}
                   </Link>
                 </li>
               ))}
