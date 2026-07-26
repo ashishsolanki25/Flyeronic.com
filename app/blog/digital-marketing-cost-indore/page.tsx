@@ -11,7 +11,7 @@ export const metadata = {
   description:
     "What does digital marketing actually cost in Indore in 2026? A realistic breakdown of SEO, Google Ads, social media, and website pricing for local businesses.",
   alternates: {
-    canonical: "https://flyeronic.com/blog/digital-marketing-cost-indore",
+    canonical: "https://www.flyeronic.com/blog/digital-marketing-cost-indore",
   },
 };
 
