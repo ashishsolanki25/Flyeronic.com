@@ -17,7 +17,7 @@ export const metadata = {
   description:
     "Flyeronic is a website development company in Indore building fast, SEO-ready websites, landing pages, and e-commerce stores engineered to convert visitors into leads.",
   alternates: {
-    canonical: "https://flyeronic.com/services/website-development",
+    canonical: "https://www.flyeronic.com/services/website-development",
   },
 };
 
