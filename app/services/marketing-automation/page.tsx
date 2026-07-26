@@ -17,7 +17,7 @@ export const metadata = {
   description:
     "Flyeronic builds marketing automation systems for Indore businesses — WhatsApp automation, email sequences, CRM workflows, and lead nurture funnels that run 24/7.",
   alternates: {
-    canonical: "https://flyeronic.com/services/marketing-automation",
+    canonical: "https://www.flyeronic.com/services/marketing-automation",
   },
 };
 
