@@ -17,7 +17,7 @@ export const metadata = {
   description:
     "Flyeronic is a Google Ads agency in Indore managing Search, Shopping, Display, YouTube and Performance Max campaigns to maximize ROAS for local and national brands.",
   alternates: {
-    canonical: "https://flyeronic.com/services/google-ads",
+    canonical: "https://www.flyeronic.com/services/google-ads",
   },
 };
 
