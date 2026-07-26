@@ -3,6 +3,7 @@ import { GlowMenu } from "@/components/ui/glow-menu";
 import { Footer } from "@/components/sections/footer";
 import { FinalCTA } from "@/components/sections/final-cta";
 import { AnimatedButton } from "@/components/ui/animated-button";
+import { RelatedPosts } from "@/components/sections/related-posts";
 import { ArrowLeft, ArrowRight, CheckCircle2 } from "lucide-react";
 
 export const metadata = {
@@ -140,6 +141,8 @@ export default function ChooseAgencyPage() {
                 <ArrowRight size={16} />
               </AnimatedButton>
             </div>
+
+            <RelatedPosts excludeSlug="choose-digital-marketing-agency-indore" />
           </div>
         </section>
 

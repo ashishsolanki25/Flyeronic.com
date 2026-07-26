@@ -3,9 +3,10 @@ import { Footer } from "@/components/sections/footer";
 import { FinalCTA } from "@/components/sections/final-cta";
 import { AnimatedButton } from "@/components/ui/animated-button";
 import { cities, getCityBySlug } from "@/lib/city-data";
+import { blogPosts } from "@/lib/blog-posts";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { CheckCircle, ArrowRight, MapPin } from "lucide-react";
+import { CheckCircle, ArrowRight, MapPin, BookOpen } from "lucide-react";
 
 export function generateStaticParams() {
   return cities.map((city) => ({ slug: city.slug }));
@@ -145,6 +146,28 @@ export default async function CityPage({
                   <h3 className="font-semibold text-foreground mb-2">{f.q}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{f.a}</p>
                 </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="py-16 bg-muted/5">
+          <div className="container max-w-3xl mx-auto">
+            <h2 className="text-xl font-bold font-heading text-foreground mb-6 text-center">
+              Related Reading
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              {blogPosts.map((post) => (
+                <Link
+                  key={post.slug}
+                  href={`/blog/${post.slug}`}
+                  className="group block bg-white border border-border rounded-2xl p-5 hover:border-primary/30 transition-all"
+                >
+                  <BookOpen className="text-primary mb-3" size={18} />
+                  <h3 className="font-semibold text-foreground text-sm leading-snug group-hover:text-primary transition-colors">
+                    {post.title}
+                  </h3>
+                </Link>
               ))}
             </div>
           </div>

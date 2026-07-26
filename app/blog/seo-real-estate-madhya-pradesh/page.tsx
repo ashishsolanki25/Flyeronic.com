@@ -3,6 +3,7 @@ import { GlowMenu } from "@/components/ui/glow-menu";
 import { Footer } from "@/components/sections/footer";
 import { FinalCTA } from "@/components/sections/final-cta";
 import { AnimatedButton } from "@/components/ui/animated-button";
+import { RelatedPosts } from "@/components/sections/related-posts";
 import { ArrowLeft, ArrowRight, MapPin, Search, Users } from "lucide-react";
 
 export const metadata = {
@@ -124,6 +125,8 @@ export default function RealEstateSEOPage() {
                 <ArrowRight size={16} />
               </AnimatedButton>
             </div>
+
+            <RelatedPosts excludeSlug="seo-real-estate-madhya-pradesh" />
           </div>
         </section>
 
