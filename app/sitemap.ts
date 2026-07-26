@@ -3,7 +3,7 @@ import { cities } from "@/lib/city-data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const cityEntries: MetadataRoute.Sitemap = cities.map((city) => ({
-    url: `https://flyeronic.com/locations/${city.slug}`,
+    url: `https://www.flyeronic.com/locations/${city.slug}`,
     lastModified: new Date(),
     changeFrequency: "monthly",
     priority: 0.6,
@@ -11,79 +11,79 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     {
-      url: "https://flyeronic.com",
+      url: "https://www.flyeronic.com",
       lastModified: new Date(),
       changeFrequency: "yearly",
       priority: 1.0,
     },
     {
-      url: "https://flyeronic.com/about",
+      url: "https://www.flyeronic.com/about",
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: "https://flyeronic.com/services/seo",
+      url: "https://www.flyeronic.com/services/seo",
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: "https://flyeronic.com/services/google-ads",
+      url: "https://www.flyeronic.com/services/google-ads",
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: "https://flyeronic.com/services/meta-ads",
+      url: "https://www.flyeronic.com/services/meta-ads",
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: "https://flyeronic.com/services/website-development",
+      url: "https://www.flyeronic.com/services/website-development",
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: "https://flyeronic.com/services/marketing-automation",
+      url: "https://www.flyeronic.com/services/marketing-automation",
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: "https://flyeronic.com/services/content-creation",
+      url: "https://www.flyeronic.com/services/content-creation",
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: "https://flyeronic.com/services/brand-films",
+      url: "https://www.flyeronic.com/services/brand-films",
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: "https://flyeronic.com/blog",
+      url: "https://www.flyeronic.com/blog",
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.7,
     },
     {
-      url: "https://flyeronic.com/blog/digital-marketing-cost-indore",
+      url: "https://www.flyeronic.com/blog/digital-marketing-cost-indore",
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.6,
     },
     {
-      url: "https://flyeronic.com/blog/choose-digital-marketing-agency-indore",
+      url: "https://www.flyeronic.com/blog/choose-digital-marketing-agency-indore",
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.6,
     },
     {
-      url: "https://flyeronic.com/blog/seo-real-estate-madhya-pradesh",
+      url: "https://www.flyeronic.com/blog/seo-real-estate-madhya-pradesh",
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.6,
