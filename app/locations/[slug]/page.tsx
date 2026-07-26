@@ -25,7 +25,7 @@ export async function generateMetadata({
     title: `Digital Marketing Agency in ${city.name} | Flyeronic`,
     description: city.metaDescription,
     alternates: {
-      canonical: `https://flyeronic.com/locations/${city.slug}`,
+      canonical: `https://www.flyeronic.com/locations/${city.slug}`,
     },
   };
 }
