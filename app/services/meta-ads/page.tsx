@@ -17,7 +17,7 @@ export const metadata = {
   description:
     "Flyeronic runs Facebook and Instagram ad campaigns for Indore businesses — lead ads, retargeting, and WhatsApp-integrated funnels that turn scrollers into customers.",
   alternates: {
-    canonical: "https://flyeronic.com/services/meta-ads",
+    canonical: "https://www.flyeronic.com/services/meta-ads",
   },
 };
 
