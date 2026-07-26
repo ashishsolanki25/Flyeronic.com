@@ -22,7 +22,7 @@ export async function generateMetadata({
 
   return {
     title: `Digital Marketing Agency in ${city.name} | Flyeronic`,
-    description: `Flyeronic offers digital marketing services in ${city.name} — SEO, Google Ads, Meta Ads, website development, and lead generation for ${city.focus}.`,
+    description: city.metaDescription,
     alternates: {
       canonical: `https://flyeronic.com/locations/${city.slug}`,
     },
@@ -36,6 +36,7 @@ const relatedServices = [
   { title: "Website Development", href: "/services/website-development" },
   { title: "Marketing Automation", href: "/services/marketing-automation" },
   { title: "Content Creation", href: "/services/content-creation" },
+  { title: "Brand Films", href: "/services/brand-films" },
 ];
 
 export default async function CityPage({
@@ -47,10 +48,28 @@ export default async function CityPage({
   const city = getCityBySlug(slug);
   if (!city) notFound();
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: city.faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.a,
+      },
+    })),
+  };
+
   return (
     <>
       <GlowMenu />
       <main className="pt-24">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+
         <section className="py-24 bg-gradient-to-br from-[#f0eeff] via-[#e8f4ff] to-[#edfff8] text-center">
           <div className="container max-w-3xl mx-auto">
             <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
@@ -70,7 +89,15 @@ export default async function CityPage({
           </div>
         </section>
 
-        <section className="py-20 bg-white">
+        <section className="py-16 bg-white">
+          <div className="container max-w-3xl mx-auto">
+            <p className="text-foreground/90 leading-relaxed">
+              {city.localDetail}
+            </p>
+          </div>
+        </section>
+
+        <section className="py-20 bg-muted/5">
           <div className="container max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold font-heading text-foreground mb-8 text-center">
               How We Help {city.name} Businesses Grow
@@ -79,7 +106,7 @@ export default async function CityPage({
               {city.highlights.map((h) => (
                 <div
                   key={h}
-                  className="flex gap-3 items-start bg-muted/10 border border-border rounded-2xl p-5"
+                  className="flex gap-3 items-start bg-white border border-border rounded-2xl p-5"
                 >
                   <CheckCircle className="text-primary shrink-0 mt-0.5" size={18} />
                   <p className="text-sm text-muted-foreground leading-relaxed">{h}</p>
@@ -95,10 +122,29 @@ export default async function CityPage({
                 <Link
                   key={s.href}
                   href={s.href}
-                  className="px-5 py-2.5 rounded-full bg-muted/10 border border-border text-sm font-medium text-foreground hover:border-primary/40 hover:text-primary transition-all"
+                  className="px-5 py-2.5 rounded-full bg-white border border-border text-sm font-medium text-foreground hover:border-primary/40 hover:text-primary transition-all"
                 >
                   {s.title}
                 </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="py-16 bg-white">
+          <div className="container max-w-3xl mx-auto">
+            <h2 className="text-2xl font-bold font-heading text-foreground mb-10 text-center">
+              {city.name} FAQs
+            </h2>
+            <div className="space-y-6">
+              {city.faqs.map((f) => (
+                <div
+                  key={f.q}
+                  className="bg-muted/10 border border-border rounded-2xl p-6"
+                >
+                  <h3 className="font-semibold text-foreground mb-2">{f.q}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{f.a}</p>
+                </div>
               ))}
             </div>
           </div>

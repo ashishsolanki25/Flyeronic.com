@@ -49,6 +49,7 @@ const services = [
   { label: "Website Development",     href: "/services/website-development" },
   { label: "Marketing Automation",    href: "/services/marketing-automation" },
   { label: "Content Creation",        href: "/services/content-creation" },
+  { label: "Brand Films",             href: "/services/brand-films" },
 ];
 
 const company = [
