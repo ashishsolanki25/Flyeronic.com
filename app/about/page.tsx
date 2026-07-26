@@ -15,7 +15,7 @@ export const metadata = {
   description:
     "Learn about Flyeronic — our story, mission, values, and the team behind India's fastest-growing performance marketing agency.",
   alternates: {
-    canonical: "https://flyeronic.com/about",
+    canonical: "https://www.flyeronic.com/about",
   },
 };
 
