@@ -12,7 +12,7 @@ export const metadata = {
     "7 questions to ask before hiring a digital marketing agency in Indore — what separates a genuine growth partner from an agency that wastes your budget.",
   alternates: {
     canonical:
-      "https://flyeronic.com/blog/choose-digital-marketing-agency-indore",
+      "https://www.flyeronic.com/blog/choose-digital-marketing-agency-indore",
   },
 };
 
