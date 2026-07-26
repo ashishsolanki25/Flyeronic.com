@@ -10,7 +10,7 @@ export const metadata = {
   description:
     "Practical guides on digital marketing costs, choosing an agency, and SEO for real estate — written for businesses in Indore and across Madhya Pradesh.",
   alternates: {
-    canonical: "https://flyeronic.com/blog",
+    canonical: "https://www.flyeronic.com/blog",
   },
 };
 
