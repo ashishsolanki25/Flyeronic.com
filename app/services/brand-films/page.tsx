@@ -17,7 +17,7 @@ export const metadata = {
   description:
     "Flyeronic produces brand films, corporate videos, product films, and cinematic ad films in Indore — from scripting and shooting to direction and post-production.",
   alternates: {
-    canonical: "https://flyeronic.com/services/brand-films",
+    canonical: "https://www.flyeronic.com/services/brand-films",
   },
 };
 
