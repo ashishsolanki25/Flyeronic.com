@@ -12,7 +12,7 @@ export const metadata = {
   description:
     "How plotted township and real estate projects in Indore, Ujjain, and across MP can use local SEO to generate site-visit bookings without depending only on paid ads.",
   alternates: {
-    canonical: "https://flyeronic.com/blog/seo-real-estate-madhya-pradesh",
+    canonical: "https://www.flyeronic.com/blog/seo-real-estate-madhya-pradesh",
   },
 };
 
