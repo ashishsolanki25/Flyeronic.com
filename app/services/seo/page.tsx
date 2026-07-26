@@ -17,7 +17,7 @@ export const metadata = {
   description:
     "Flyeronic offers SEO services in Indore including local SEO, on-page SEO, technical SEO, and link building to help businesses rank higher and get more organic leads.",
   alternates: {
-    canonical: "https://flyeronic.com/services/seo",
+    canonical: "https://www.flyeronic.com/services/seo",
   },
 };
 
