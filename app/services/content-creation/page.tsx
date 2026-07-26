@@ -17,7 +17,7 @@ export const metadata = {
   description:
     "Flyeronic is a content creation agency in Indore producing reels, photography, copywriting, and graphic design that builds brand presence and drives engagement.",
   alternates: {
-    canonical: "https://flyeronic.com/services/content-creation",
+    canonical: "https://www.flyeronic.com/services/content-creation",
   },
 };
 
