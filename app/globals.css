@@ -380,3 +380,136 @@ a, button {
   from { opacity: 1; transform: translateY(0) scale(1); }
   to   { opacity: 0; transform: translateY(8px) scale(0.96); }
 }
+
+/* ─── Announcement Bar (Free Demo Shoot offer) ─── */
+.announcement-bar {
+  position: sticky;
+  top: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 20px;
+  background: linear-gradient(100deg, #5B2FE0 0%, #6C3AFF 48%, #4B1FCC 100%);
+  color: #FFFFFF;
+}
+
+.announcement-bar__inner {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.announcement-bar__rec {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #FFD9D9;
+  flex-shrink: 0;
+}
+
+.announcement-bar__rec-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent-red);
+  animation: rec-blink 1.6s ease-in-out infinite;
+}
+
+@keyframes rec-blink {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.25; }
+}
+
+.announcement-bar__text {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.4;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.announcement-bar__text-strong {
+  font-weight: 700;
+  color: var(--secondary);
+}
+
+.announcement-bar__text-sep {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.announcement-bar__cta {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 18px;
+  border-radius: 999px;
+  background: #FFFFFF;
+  color: var(--primary);
+  font-size: 0.8rem;
+  font-weight: 700;
+  white-space: nowrap;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.announcement-bar__cta:hover {
+  background: var(--secondary);
+  color: #FFFFFF;
+  transform: translateY(-1px);
+}
+
+.announcement-bar__close {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.65);
+  cursor: pointer;
+}
+
+.announcement-bar__close:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #FFFFFF;
+}
+
+@media (max-width: 640px) {
+  .announcement-bar {
+    padding: 10px 14px;
+  }
+
+  .announcement-bar__inner {
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .announcement-bar__text {
+    text-align: left;
+    font-size: 0.8rem;
+  }
+
+  .announcement-bar__cta {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .announcement-bar__rec-dot {
+    animation: none;
+  }
+}
