@@ -3,6 +3,7 @@ import { Poppins, Inter } from "next/font/google";
 import { Providers } from "@/components/providers";
 import { ScrollAnimation } from "@/components/scroll-animation";
 import { WhatsAppButton } from "@/components/ui/whatsapp-button";
+import { AnnouncementBar } from "@/components/ui/announcement-bar";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -139,6 +140,7 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="min-h-screen bg-background text-foreground antialiased">
+        <AnnouncementBar />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
