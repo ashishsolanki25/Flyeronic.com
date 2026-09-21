@@ -7,11 +7,11 @@ import { HelpCircle, MapPin, ChevronDown, CheckCircle, ChevronUp } from "lucide-
 const faqs = [
   {
     question: "Indore mein best digital marketing agency kaun si hai?",
-    answer: "Flyeronic Indore ki result-driven digital marketing agency hai jo Super Corridor pe based hai. Hum Facebook Ads, Google Ads, SEO, aur sales funnel automation mein specialize karte hain. Hamare clients — real estate, clinics, salons, aur food brands — ne average 3x leads growth dekhi hai pehle 60 dinon mein. Agar aap Indore mein apna business grow karna chahte hain, toh Flyeronic aapka sabse bharosemand partner hai.",
+    answer: "Flyeronic Indore ki digital marketing agency hai jo Super Corridor pe based hai. Hum Facebook Ads, Google Ads, SEO, aur sales funnel automation par kaam karte hain. Best agency ka faisla aapke goals, budget aur proof par hona chahiye, isliye hum pehle free strategy call mein aapke marketing ka audit karte hain aur bina commitment ke batate hain ki kya kaam karega.",
   },
   {
     question: "Kya Flyeronic real estate aur local businesses ke liye kaam karta hai?",
-    answer: "Haan. Hum Indore-Ujjain Road ke plotted township projects, clinics, salons, restaurants aur industrial brands ke liye kaam karte hain. Real estate ke liye hum WhatsApp campaigns, Facebook Lead Ads aur NRI-targeted Instagram content banate hain jo directly site visits aur bookings mein convert hoti hain.",
+    answer: "Haan. Real estate, clinics, salons, restaurants aur local businesses hamare focus areas hain. Real estate ke liye hum WhatsApp campaigns, Facebook Lead Ads aur NRI-targeted Instagram content plan karte hain jo site visits aur bookings ke liye design hote hain.",
   },
   {
     question: "Google pe #1 rank karne mein kitna time lagta hai?",
@@ -27,7 +27,7 @@ const faqs = [
   },
   {
     question: "Pehla result kab dikhega aur kaise track karein?",
-    answer: "Paid ads se leads 7-14 dinon mein aani shuru ho jaati hain. SEO ke results 60-90 dinon mein dikhne lagte hain. Hum har client ko monthly report dete hain jisme leads count, ad spend, ROAS, aur keyword rankings clearly mention hote hain — sab kuch transparent.",
+    answer: "Paid ads se leads aksar 7-14 dinon mein aani shuru ho jaati hain. SEO mein shuruaati movement (impressions aur rankings) 60-90 dinon mein dikh sakti hai, aur competitive keywords ke liye 3-6 mahine lagte hain. Hum har client ko monthly report dete hain jisme leads count, ad spend, ROAS, aur keyword rankings clearly mention hote hain.",
   },
 ];
 

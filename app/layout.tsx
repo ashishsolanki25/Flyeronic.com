@@ -22,31 +22,17 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.flyeronic.com"),
-  title: "Digital Marketing Agency in Indore | Flyeronic - Grow Your Business",
+  title: "Digital Marketing Agency in Indore | Flyeronic",
   description:
     "Leading digital marketing agency in Indore offering SEO, social media marketing, website design & lead generation services for local businesses. Get a free strategy call today.",
-  keywords: [
-    "digital marketing agency in Indore",
-    "SEO services Indore",
-    "social media marketing Indore",
-    "website designing company Indore",
-    "best digital marketing company in Indore, MP",
-    "digital marketing agency",
-    "marketing automation",
-    "performance marketing",
-    "lead generation",
-    "branding agency",
-    "sales funnels",
-    "Google Ads agency",
-    "Flyeronic",
-  ],verification: { google: "Z8ZIkOozfMT-whF-_mcSXASLAF_QdgyQBJhJNGABWUk" },
+  verification: { google: "Z8ZIkOozfMT-whF-_mcSXASLAF_QdgyQBJhJNGABWUk" },
   authors: [{ name: "Flyeronic", url: "https://www.flyeronic.com" }],
   creator: "Flyeronic",
   alternates: {
     canonical: "https://www.flyeronic.com",
   },
   openGraph: {
-    title: "Digital Marketing Agency in Indore | Flyeronic - Grow Your Business",
+    title: "Digital Marketing Agency in Indore | Flyeronic",
     description:
       "Leading digital marketing agency in Indore offering SEO, social media marketing, website design & lead generation services for local businesses. Get a free strategy call today.",
     type: "website",
@@ -56,7 +42,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Digital Marketing Agency in Indore | Flyeronic - Grow Your Business",
+    title: "Digital Marketing Agency in Indore | Flyeronic",
     description:
       "Leading digital marketing agency in Indore offering SEO, social media marketing, website design & lead generation services for local businesses. Get a free strategy call today.",
     creator: "@flyeronic",
@@ -86,7 +72,17 @@ export const metadata: Metadata = {
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
-  "@type": "MarketingAgency",
+  "@type": "ProfessionalService",
+  "@id": "https://www.flyeronic.com/#organization",
+  "description": "Digital marketing agency in Indore offering SEO, Google Ads, Meta Ads, social media marketing, website development, and marketing automation.",
+  "logo": "https://www.flyeronic.com/flyeronic-logo.svg",
+  "email": "flyeronic.info@gmail.com",
+  "hasMap": "https://www.google.com/maps?cid=13151350818409658901",
+  "sameAs": [
+    "https://www.instagram.com/flyeronic.co",
+    "https://www.facebook.com/share/1MHTPVcQkZ/",
+    "https://www.linkedin.com/company/flyeronic"
+  ],
   "name": "Flyeronic",
   "image": "https://www.flyeronic.com/flyeronic-logo.svg",
   "url": "https://www.flyeronic.com",

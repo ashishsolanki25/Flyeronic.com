@@ -44,6 +44,8 @@ const socials = [
 
 const services = [
   { label: "SEO & Content",           href: "/services/seo" },
+  { label: "Local SEO",               href: "/services/local-seo" },
+  { label: "Real Estate Marketing",   href: "/industries/real-estate" },
   { label: "Performance Marketing",   href: "/services/google-ads" },
   { label: "Social Media Marketing",  href: "/services/meta-ads" },
   { label: "Website Development",     href: "/services/website-development" },
@@ -56,9 +58,9 @@ const company = [
   { label: "About Us",     href: "/about" },
   { label: "Our Services", href: "/#services" },
   { label: "Digital Marketing in Indore", href: "/locations/indore" },
-  { label: "Case Studies", href: "/#case-studies" },
+  { label: "Case Studies", href: "/case-studies" },
   { label: "Blog",         href: "/blog" },
-  { label: "Careers",      href: "#" },
+  { label: "Contact",      href: "/contact" },
 ];
 
 const contact = [
@@ -190,9 +192,9 @@ export function Footer() {
         <div className="mt-20 pt-8 border-t border-border/60 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
           <p>© {new Date().getFullYear()} Flyeronic. All rights reserved.</p>
           <div className="flex flex-wrap gap-5 justify-center">
-            <a href="#" className="hover:text-primary transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-primary transition-colors">Terms of Service</a>
-            <a href="#" className="hover:text-primary transition-colors">Cookie Policy</a>
+            <a href="/privacy-policy" className="hover:text-primary transition-colors">Privacy Policy</a>
+            <a href="/terms" className="hover:text-primary transition-colors">Terms of Service</a>
+            <a href="/cookie-policy" className="hover:text-primary transition-colors">Cookie Policy</a>
           </div>
         </div>
       </div>

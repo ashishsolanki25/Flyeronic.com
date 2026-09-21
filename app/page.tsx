@@ -6,7 +6,6 @@ import { RevealServicesSection } from "@/components/sections/reveal-services";
 import { ServicesSection } from "@/components/sections/services";
 import { ProcessSection } from "@/components/sections/process";
 import { CaseStudiesSection } from "@/components/sections/case-studies";
-import { SocialProof } from "@/components/sections/social-proof";
 import { ContactSection } from "@/components/sections/contact";
 import { LocalFaqLocations } from "@/components/sections/local-faq-locations";
 import { FinalCTA } from "@/components/sections/final-cta";
@@ -38,9 +37,6 @@ export default function Home() {
         </ScrollReveal>
         <ScrollReveal delay={100}>
           <CaseStudiesSection />
-        </ScrollReveal>
-        <ScrollReveal delay={100}>
-          <SocialProof />
         </ScrollReveal>
         <ScrollReveal delay={100}>
           <ContactSection />
