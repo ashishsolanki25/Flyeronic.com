@@ -4,15 +4,16 @@ import { FinalCTA } from "@/components/sections/final-cta";
 import { AnimatedButton } from "@/components/ui/animated-button";
 import { SEOIllustration } from "@/components/ui/service-illustrations";
 import { JsonLd } from "@/components/json-ld";
+import { pageMeta } from "@/lib/page-meta";
 import { MapPin, Star, ListChecks, FileText, Code2, BarChart3, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
-export const metadata = {
+export const metadata = pageMeta({
   title: "Local SEO & Google Business Profile in Indore | Flyeronic",
   description:
     "Local SEO services in Indore: Google Business Profile setup and optimization, citations, review generation, and local landing pages to help nearby customers find you on Google Maps.",
-  alternates: { canonical: "https://www.flyeronic.com/services/local-seo" },
-};
+  path: "/services/local-seo",
+});
 
 const features = [
   { icon: <MapPin size={22} />, title: "Google Business Profile Optimization", description: "Correct categories, services, description, photos, and weekly posts so your profile is complete and easy to trust." },

@@ -39,7 +39,7 @@ const services = [
     icon: <Share2 size={24} />,
     color: "from-pink-500 to-rose-400",
     bg: "bg-pink-50 text-pink-600",
-    href: "/services/meta-ads",
+    href: "/services/social-media-marketing",
   },
   {
     title: "Website Development",
@@ -62,6 +62,7 @@ const services = [
     icon: <Magnet size={24} />,
     color: "from-red-500 to-pink-500",
     bg: "bg-red-50 text-red-600",
+    href: "/services/lead-generation",
   },
   {
     title: "Marketing Automation",
