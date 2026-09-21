@@ -76,7 +76,7 @@ const localBusinessSchema = {
   "@id": "https://www.flyeronic.com/#organization",
   "description": "Digital marketing agency in Indore offering SEO, Google Ads, Meta Ads, social media marketing, website development, and marketing automation.",
   "logo": "https://www.flyeronic.com/flyeronic-logo.svg",
-  "email": "flyeronic.info@gmail.com",
+  "email": ["team@flyeronic.com", "flyeronic.info@gmail.com"],
   "hasMap": "https://www.google.com/maps?cid=13151350818409658901",
   "sameAs": [
     "https://www.instagram.com/flyeronic.co",

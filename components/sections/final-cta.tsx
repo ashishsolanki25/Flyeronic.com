@@ -70,16 +70,16 @@ export function FinalCTA() {
                 <ArrowRight size={16} />
               </AnimatedButton>
               <AnimatedButton
-                href="mailto:flyeronic.info@gmail.com"
+                href="mailto:team@flyeronic.com"
                 variant="outline"
                 className="border-white/20 text-white hover:bg-white/10"
               >
-                flyeronic.info@gmail.com
+                team@flyeronic.com
               </AnimatedButton>
             </div>
 
             <p className="mt-6 text-xs" style={{ color: "rgba(255,255,255,0.45)", textAlign: "center" }}>
-              No commitment · Free audit · Results in 30 days
+              No commitment · Free audit · Reply within 24 hours
             </p>
           </div>
         </div>

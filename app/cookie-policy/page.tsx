@@ -19,7 +19,7 @@ export default function CookiePolicyPage() {
         <p>You can block or delete cookies in your browser settings. Blocking some cookies may affect how parts of the site work.</p>
       </LegalSection>
       <LegalSection heading="Contact">
-        <p>Questions about this policy: flyeronic.info@gmail.com.</p>
+        <p>Questions about this policy: team@flyeronic.com.</p>
       </LegalSection>
     </LegalPage>
   );

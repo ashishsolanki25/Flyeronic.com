@@ -22,6 +22,14 @@ const WEB3FORMS_ACCESS_KEY = "e8e2572f-466a-4820-8fc6-333b891a3f37";
 const contactInfo = [
   {
     icon: Mail,
+    label: "Team Email",
+    value: "team@flyeronic.com",
+    href: "mailto:team@flyeronic.com",
+    accent: "#7C3AED",
+    bg: "rgba(124,58,237,0.15)",
+  },
+  {
+    icon: Mail,
     label: "Email Us",
     value: "flyeronic.info@gmail.com",
     href: "mailto:flyeronic.info@gmail.com",
