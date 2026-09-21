@@ -4,15 +4,16 @@ import { FinalCTA } from "@/components/sections/final-cta";
 import { AnimatedButton } from "@/components/ui/animated-button";
 import { MetaAdsIllustration } from "@/components/ui/service-illustrations";
 import { JsonLd } from "@/components/json-ld";
+import { pageMeta } from "@/lib/page-meta";
 import { Megaphone, Search, LayoutTemplate, MessageCircle, Video, Globe2, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
-export const metadata = {
+export const metadata = pageMeta({
   title: "Real Estate Digital Marketing in Indore | Flyeronic",
   description:
     "Digital marketing for real estate projects in Indore: Meta lead ads, Google Search ads, project landing pages, WhatsApp follow-up, and video, built to bring in qualified site visits.",
-  alternates: { canonical: "https://www.flyeronic.com/industries/real-estate" },
-};
+  path: "/industries/real-estate",
+});
 
 const features = [
   { icon: <Megaphone size={22} />, title: "Meta Lead Ads", description: "Facebook and Instagram lead campaigns aimed at buyers and investors for plots, townships, and flats." },
