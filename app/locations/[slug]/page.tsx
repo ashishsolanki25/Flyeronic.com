@@ -21,17 +21,24 @@ export async function generateMetadata({
   const city = getCityBySlug(slug);
   if (!city) return {};
 
+  const isHome = city.slug === "indore";
   return {
-    title: `Digital Marketing Agency in ${city.name} | Flyeronic`,
+    title: isHome
+      ? "Digital Marketing in Super Corridor, Indore | Flyeronic"
+      : `Digital Marketing Agency in ${city.name} | Flyeronic`,
     description: city.metaDescription,
     alternates: {
       canonical: `https://www.flyeronic.com/locations/${city.slug}`,
     },
+    // Only the Indore page is indexed; other city pages stay out of search until they carry unique local content.
+    robots: isHome ? { index: true, follow: true } : { index: false, follow: true },
   };
 }
 
 const relatedServices = [
   { title: "SEO", href: "/services/seo" },
+  { title: "Local SEO", href: "/services/local-seo" },
+  { title: "Real Estate Marketing", href: "/industries/real-estate" },
   { title: "Google Ads", href: "/services/google-ads" },
   { title: "Meta Ads", href: "/services/meta-ads" },
   { title: "Website Development", href: "/services/website-development" },

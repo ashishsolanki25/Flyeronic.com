@@ -24,14 +24,14 @@ export const cities: CityData[] = [
     intro:
       "Indore is where Flyeronic is based — our office sits on Super Corridor, and we work with businesses across every part of the city, from Vijay Nagar and Palasia to Rajwada and Indore-Ujjain Road. Being local means faster turnarounds, in-person meetings when you want them, and a real understanding of what works for Indore's market — not a generic playbook applied from outside.",
     localDetail:
-      "Because we're a five-minute drive from most of Indore, client meetings happen in person more often than over video — useful for the kind of hands-on work real estate launches, clinic openings, and restaurant brand refreshes usually need. We've run campaigns for Vijay Nagar retail brands during festive season rushes and for Super Corridor real estate projects targeting NRI and out-of-city buyers, so the playbook adjusts depending on which part of Indore a client is actually selling to.",
+      "Our office is on Super Corridor, so in-person strategy meetings are easy to arrange for businesses across Indore. Real estate launches, clinic openings, and restaurant brand refreshes usually need hands-on work, so we plan campaigns around which part of Indore your customers are actually in — Super Corridor, Vijay Nagar, Palasia, or beyond.",
     metaDescription:
       "Flyeronic is an Indore-based digital marketing agency on Super Corridor, serving real estate, clinics, salons, restaurants, and D2C brands across Vijay Nagar, Palasia, and beyond with SEO, ads, and web development.",
     highlights: [
       "In-person strategy meetings at our Super Corridor office",
       "Deep local market knowledge across Vijay Nagar, Palasia, Rajwada & beyond",
       "Full-service SEO, paid ads, automation, and content — all under one roof",
-      "50+ Indore brands grown with a 4.9/5 client rating",
+      "Free marketing audit and strategy call before you commit",
     ],
     faqs: [
       {
@@ -44,7 +44,7 @@ export const cities: CityData[] = [
       },
       {
         q: "Which parts of Indore do you have the most experience marketing in?",
-        a: "We've worked across Vijay Nagar, Palasia, Rajwada, and the Super Corridor stretch — each has different customer behavior, which shapes how we set up campaigns for a client there.",
+        a: "We plan campaigns around Vijay Nagar, Palasia, Rajwada, and the Super Corridor stretch — each has different customer behavior, which shapes how we set up campaigns for a client there.",
       },
     ],
   },
@@ -56,7 +56,7 @@ export const cities: CityData[] = [
     intro:
       "As the capital of Madhya Pradesh, Bhopal is home to a mix of government bodies, corporate offices, and educational institutions — each with very different marketing needs. We help Bhopal-based organizations build credible digital presences, from SEO and website development to lead generation campaigns tailored to institutional and corporate audiences.",
     localDetail:
-      "Bhopal clients tend to fall into one of two very different buckets: institutions that need a credible, document-heavy web presence for tenders and empanelment, or coaching institutes and colleges racing for admission-season visibility. We've built both — a professional, certification-forward site for a government-adjacent vendor, and admission-cycle Google Ads campaigns timed to when Bhopal's coaching search volume actually spikes.",
+      "We work with businesses in Bhopal remotely: strategy calls, reporting, and campaign reviews happen over video or WhatsApp, with in-person meetings at our Indore office when needed. Every engagement starts with a free audit of your current marketing.",
     metaDescription:
       "Digital marketing for Bhopal's government vendors, corporate offices, and education institutes — SEO, website development, and lead generation from Flyeronic, built around MP's capital city's institutional buyers.",
     highlights: [
@@ -88,7 +88,7 @@ export const cities: CityData[] = [
     intro:
       "Jabalpur's economy runs on a strong industrial base alongside a growing education sector. We work with manufacturing businesses and educational institutes in Jabalpur to build digital marketing systems — SEO, performance ads, and content — that generate consistent, qualified leads.",
     localDetail:
-      "The two sides of Jabalpur's economy need almost opposite marketing approaches — a manufacturing unit needs to be findable by a handful of procurement buyers, while a college or coaching institute needs high-volume local visibility among students and parents. We keep those campaigns structurally separate even when both are running for the same client group in the city.",
+      "We work with businesses in Jabalpur remotely: strategy calls, reporting, and campaign reviews happen over video or WhatsApp, with in-person meetings at our Indore office when needed. Every engagement starts with a free audit of your current marketing.",
     metaDescription:
       "Flyeronic supports Jabalpur's manufacturing units and education institutes with SEO, Google Ads, and lead-generation websites — built around the city's industrial and student-focused buyer base.",
     highlights: [
@@ -120,7 +120,7 @@ export const cities: CityData[] = [
     intro:
       "Gwalior is a key manufacturing and retail hub in North Madhya Pradesh. We help Gwalior businesses — from factories to retail showrooms — build a digital presence that drives real leads and sales, combining SEO, paid ads, and content marketing suited to the local market.",
     localDetail:
-      "Retail and showroom businesses in Gwalior see sharp demand spikes around festivals and local shopping seasons, so offer-led ad campaigns timed to those windows tend to outperform always-on advertising. For manufacturing clients, we've found a straightforward, well-documented company website often does more for credibility with a new buyer than any single campaign.",
+      "We work with businesses in Gwalior remotely: strategy calls, reporting, and campaign reviews happen over video or WhatsApp, with in-person meetings at our Indore office when needed. Every engagement starts with a free audit of your current marketing.",
     metaDescription:
       "SEO, ads, and web development for Gwalior's manufacturing units and retail showrooms — Flyeronic builds digital marketing tailored to North Madhya Pradesh's industrial and shopping economy.",
     highlights: [
@@ -152,7 +152,7 @@ export const cities: CityData[] = [
     intro:
       "Ujjain's economy is deeply tied to tourism and pilgrimage traffic, alongside a strong base of local businesses. We help Ujjain-based hotels, businesses, and service providers reach both local customers and the steady stream of visitors through SEO, local search optimization, and social media marketing.",
     localDetail:
-      "Demand for hotels, dharamshalas, and travel services in Ujjain moves with the religious calendar rather than a typical weekday-weekend pattern — search and booking activity spikes hard around specific festival dates. We plan campaigns around that calendar directly instead of running flat, always-on ad spend that misses the actual demand windows.",
+      "We work with businesses in Ujjain remotely: strategy calls, reporting, and campaign reviews happen over video or WhatsApp, with in-person meetings at our Indore office when needed. Every engagement starts with a free audit of your current marketing.",
     metaDescription:
       "Flyeronic markets Ujjain's hotels, dharamshalas, and local businesses with festival-calendar-timed ad campaigns, Google Business Profile management, and local SEO built around pilgrimage-driven demand.",
     highlights: [
@@ -184,7 +184,7 @@ export const cities: CityData[] = [
     intro:
       "Dewas is home to a significant industrial and manufacturing base. We work with B2B businesses in Dewas to build lead generation systems — combining SEO, Google Ads, and marketing automation — that keep the sales pipeline full without relying on cold outreach alone.",
     localDetail:
-      "For Dewas's industrial businesses, a clear, well-documented website usually does more for credibility with a new buyer than any single ad campaign — certifications, product categories, and past work need to be easy to find, not buried in a PDF catalog. We build that foundation first, then layer lead generation on top of it.",
+      "We work with businesses in Dewas remotely: strategy calls, reporting, and campaign reviews happen over video or WhatsApp, with in-person meetings at our Indore office when needed. Every engagement starts with a free audit of your current marketing.",
     metaDescription:
       "B2B lead generation, SEO, and marketing automation for Dewas's industrial and manufacturing businesses — Flyeronic builds credibility-focused digital systems for MP's industrial belt.",
     highlights: [
@@ -216,7 +216,7 @@ export const cities: CityData[] = [
     intro:
       "Known as the 'Detroit of Asia,' Pithampur is one of the largest industrial hubs in Madhya Pradesh. We help heavy industry and B2B businesses in Pithampur build a professional digital presence — SEO, website development, and lead generation — designed for long B2B sales cycles.",
     localDetail:
-      "Pithampur's buyer base is almost entirely OEMs, tier-1/tier-2 suppliers, and industrial distributors — businesses that search for suppliers by product category, capability, or certification rather than brand name. We structure SEO and site content around exactly those search patterns, and where relevant, extend it to export-focused content for manufacturers looking beyond domestic buyers.",
+      "We work with businesses in Pithampur remotely: strategy calls, reporting, and campaign reviews happen over video or WhatsApp, with in-person meetings at our Indore office when needed. Every engagement starts with a free audit of your current marketing.",
     metaDescription:
       "Flyeronic builds B2B-focused SEO, websites, and lead generation for Pithampur's auto and heavy industry manufacturers — targeting OEMs, suppliers, and distributors across Asia's industrial hub.",
     highlights: [
@@ -248,7 +248,7 @@ export const cities: CityData[] = [
     intro:
       "Ratlam is a well-established hub for FMCG, pharmaceutical, and trading businesses. We help Ratlam-based businesses in these sectors build digital marketing systems — SEO, performance ads, and website development — that support both distribution networks and direct customer acquisition.",
     localDetail:
-      "Ratlam's trading and distribution economy runs heavily on existing relationships, so we've found digital marketing works best when it supports those relationships rather than tries to replace them — a findable, credible web presence that reassures retailers and sub-dealers you're an established partner, not a pure cold-acquisition play.",
+      "We work with businesses in Ratlam remotely: strategy calls, reporting, and campaign reviews happen over video or WhatsApp, with in-person meetings at our Indore office when needed. Every engagement starts with a free audit of your current marketing.",
     metaDescription:
       "SEO, web development, and digital marketing for Ratlam's FMCG, pharma, and trading businesses — Flyeronic builds credible online presence that supports existing distribution relationships.",
     highlights: [
@@ -280,7 +280,7 @@ export const cities: CityData[] = [
     intro:
       "Sagar, in Central Madhya Pradesh, has a strong base of educational institutions and retail businesses. We help Sagar-based colleges, coaching institutes, and retail brands grow through SEO, social media marketing, and lead generation tailored to the local market.",
     localDetail:
-      "Most demand in a city the size of Sagar is genuinely local, so hyperlocal SEO — ranking for neighborhood-specific and Sagar-specific search terms — tends to bring more relevant leads than broader, state-wide keyword targeting. That's where we start with nearly every Sagar client before adding paid campaigns on top.",
+      "We work with businesses in Sagar remotely: strategy calls, reporting, and campaign reviews happen over video or WhatsApp, with in-person meetings at our Indore office when needed. Every engagement starts with a free audit of your current marketing.",
     metaDescription:
       "Flyeronic helps Sagar's education institutes and retail brands grow through hyperlocal SEO, admission-season Google Ads, and Google Business Profile management built for Central MP's local market.",
     highlights: [
@@ -312,7 +312,7 @@ export const cities: CityData[] = [
     intro:
       "Rewa, in East Madhya Pradesh, has a growing healthcare sector alongside government and public institutions. We help Rewa-based clinics, hospitals, and organizations build a trustworthy digital presence through SEO, website development, and local search optimization.",
     localDetail:
-      "For healthcare providers in Rewa, patient reviews and a well-managed Google Business Profile tend to influence new-patient decisions more directly than paid advertising does — so that's usually where we focus first, before layering in broader SEO and lead generation for the practice.",
+      "We work with businesses in Rewa remotely: strategy calls, reporting, and campaign reviews happen over video or WhatsApp, with in-person meetings at our Indore office when needed. Every engagement starts with a free audit of your current marketing.",
     metaDescription:
       "SEO, Google Business Profile management, and website development for Rewa's clinics, hospitals, and government-adjacent organizations — Flyeronic builds trust-focused digital presence for East MP.",
     highlights: [

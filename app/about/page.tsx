@@ -13,7 +13,7 @@ import { AnimatedButton } from "@/components/ui/animated-button";
 export const metadata = {
   title: "About Flyeronic — Digital Marketing Agency in Indore",
   description:
-    "Learn about Flyeronic — our story, mission, values, and the team behind India's fastest-growing performance marketing agency.",
+    "Learn about Flyeronic — our story, mission, values, and the team behind Flyeronic, a digital marketing agency in Indore.",
   alternates: {
     canonical: "https://www.flyeronic.com/about",
   },
@@ -21,10 +21,10 @@ export const metadata = {
 
 /* ─── Data ─── */
 const stats = [
-  { value: "50+", label: "Brands Scaled" },
-  { value: "4.9", label: "Average Rating" },
-  { value: "10M+", label: "Leads Generated" },
-  { value: "3.5x", label: "Average ROAS" },
+  { value: "7", label: "Core Services" },
+  { value: "24h", label: "Response Time" },
+  { value: "30 min", label: "Free Strategy Call" },
+  { value: "Indore", label: "Super Corridor Office" },
 ];
 
 const values = [

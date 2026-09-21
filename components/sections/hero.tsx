@@ -65,21 +65,11 @@ export function HeroSection() {
             </div>
 
             <div className="flex flex-wrap justify-center lg:justify-start items-center gap-4 sm:gap-6 pt-4 text-sm text-muted-foreground">
-              <div className="flex items-center gap-2">
-                <div className="flex -space-x-2">
-                  {[1, 2, 3, 4].map((i) => (
-                    <div
-                      key={i}
-                      className="w-8 h-8 rounded-full border-2 border-white bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center text-[10px] font-bold text-primary"
-                    >
-                      {String.fromCharCode(64 + i)}
-                    </div>
-                  ))}
-                </div>
-                <span className="font-medium text-foreground">50+ brands</span>
-              </div>
+              <span className="font-medium text-foreground">Free 30-min strategy call</span>
               <div className="w-px h-5 bg-border" />
-              <span className="font-medium text-foreground">⭐ 4.9/5 rating</span>
+              <span className="font-medium text-foreground">Based in Super Corridor, Indore</span>
+              <div className="w-px h-5 bg-border" />
+              <span className="font-medium text-foreground">Reply within 24 hours</span>
             </div>
           </div>
 
@@ -97,15 +87,15 @@ export function HeroSection() {
                 {/* Top Widgets */}
                 <rect x="30" y="60" width="105" height="70" rx="8" fill="#F8F7FF"/>
                 <text x="45" y="85" fontSize="10" fill="#6B6B75" fontWeight="bold">ROAS</text>
-                <text x="45" y="110" fontSize="18" fill="#6C3AFF" fontWeight="800">4.2x</text>
+                <text x="45" y="110" fontSize="18" fill="#6C3AFF" fontWeight="800">Tracked</text>
                 
                 <rect x="147.5" y="60" width="105" height="70" rx="8" fill="#F8F7FF"/>
                 <text x="162.5" y="85" fontSize="10" fill="#6B6B75" fontWeight="bold">LEADS</text>
-                <text x="162.5" y="110" fontSize="18" fill="#00C9A7" fontWeight="800">+240%</text>
+                <text x="162.5" y="110" fontSize="18" fill="#00C9A7" fontWeight="800">Logged</text>
 
                 <rect x="265" y="60" width="105" height="70" rx="8" fill="#F8F7FF"/>
-                <text x="280" y="85" fontSize="10" fill="#6B6B75" fontWeight="bold">RETENTION</text>
-                <text x="280" y="110" fontSize="18" fill="#FF6B6B" fontWeight="800">92%</text>
+                <text x="280" y="85" fontSize="10" fill="#6B6B75" fontWeight="bold">REPORTS</text>
+                <text x="280" y="110" fontSize="18" fill="#FF6B6B" fontWeight="800">Monthly</text>
 
                 {/* Main Chart Area */}
                 <rect x="30" y="145" width="340" height="125" rx="8" fill="#F8F7FF"/>

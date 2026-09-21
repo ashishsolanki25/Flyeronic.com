@@ -59,11 +59,11 @@ function RevealImageList() {
       images: [
         {
           src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=200&auto=format&fit=crop&q=60",
-          alt: "Best digital marketing agency team in Indore optimizing ad campaigns",
+          alt: "Marketing team reviewing ad campaign performance",
         },
         {
           src: "https://images.unsplash.com/photo-1611926653458-09294b3142bf?w=200&auto=format&fit=crop&q=60",
-          alt: "Indore performance marketing ads optimization dashboard",
+          alt: "Ad performance dashboard on a laptop",
         },
       ],
     },
@@ -72,11 +72,11 @@ function RevealImageList() {
       images: [
         {
           src: "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=200&auto=format&fit=crop&q=60",
-          alt: "Marketing automation services by top Indore digital marketing company",
+          alt: "Marketing automation workflow on screen",
         },
         {
           src: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=200&auto=format&fit=crop&q=60",
-          alt: "Automated sales funnel workflow setup for Indore businesses",
+          alt: "Sales funnel workflow diagram",
         },
       ],
     },
@@ -85,11 +85,11 @@ function RevealImageList() {
       images: [
         {
           src: "https://images.unsplash.com/photo-1547658719-da2b51169166?w=200&auto=format&fit=crop&q=60",
-          alt: "Custom website designing company in Indore creating high converting layouts",
+          alt: "Website layout being designed",
         },
         {
           src: "https://images.unsplash.com/photo-1587440871875-191322ee64b0?w=200&auto=format&fit=crop&q=60",
-          alt: "Conversion optimized sales funnel design in Indore",
+          alt: "Website conversion funnel planning",
         },
       ],
     },
@@ -98,11 +98,11 @@ function RevealImageList() {
       images: [
         {
           src: "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=200&auto=format&fit=crop&q=60",
-          alt: "Creative branding and logo design services in Indore MP",
+          alt: "Brand and logo design work",
         },
         {
           src: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=200&auto=format&fit=crop&q=60",
-          alt: "Graphic designing and brand identity development in Indore",
+          alt: "Brand identity design materials",
         },
       ],
     },
@@ -111,11 +111,11 @@ function RevealImageList() {
       images: [
         {
           src: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=200&auto=format&fit=crop&q=60",
-          alt: "Lead generation agency Indore building sales pipeline",
+          alt: "Sales pipeline and lead tracking",
         },
         {
           src: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=200&auto=format&fit=crop&q=60",
-          alt: "High converting lead capture landing page in Indore MP",
+          alt: "Lead capture landing page on a screen",
         },
       ],
     },

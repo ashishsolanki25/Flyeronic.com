@@ -1,93 +1,33 @@
 import { MetadataRoute } from "next";
-import { cities } from "@/lib/city-data";
+
+const BASE = "https://www.flyeronic.com";
+const LAST = new Date("2026-09-21");
+
+const routes: { path: string; priority: number; changeFrequency: "weekly" | "monthly" }[] = [
+  { path: "", priority: 1.0, changeFrequency: "monthly" },
+  { path: "/about", priority: 0.7, changeFrequency: "monthly" },
+  { path: "/contact", priority: 0.7, changeFrequency: "monthly" },
+  { path: "/locations/indore", priority: 0.9, changeFrequency: "monthly" },
+  { path: "/services/seo", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/services/local-seo", priority: 0.9, changeFrequency: "monthly" },
+  { path: "/services/google-ads", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/services/meta-ads", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/services/website-development", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/services/marketing-automation", priority: 0.7, changeFrequency: "monthly" },
+  { path: "/services/content-creation", priority: 0.7, changeFrequency: "monthly" },
+  { path: "/services/brand-films", priority: 0.7, changeFrequency: "monthly" },
+  { path: "/industries/real-estate", priority: 0.9, changeFrequency: "monthly" },
+  { path: "/blog", priority: 0.7, changeFrequency: "weekly" },
+  { path: "/blog/digital-marketing-cost-indore", priority: 0.6, changeFrequency: "monthly" },
+  { path: "/blog/choose-digital-marketing-agency-indore", priority: 0.6, changeFrequency: "monthly" },
+  { path: "/blog/seo-real-estate-madhya-pradesh", priority: 0.6, changeFrequency: "monthly" },
+];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const cityEntries: MetadataRoute.Sitemap = cities.map((city) => ({
-    url: `https://www.flyeronic.com/locations/${city.slug}`,
-    lastModified: new Date(),
-    changeFrequency: "monthly",
-    priority: 0.6,
+  return routes.map((r) => ({
+    url: `${BASE}${r.path}`,
+    lastModified: LAST,
+    changeFrequency: r.changeFrequency,
+    priority: r.priority,
   }));
-
-  return [
-    {
-      url: "https://www.flyeronic.com",
-      lastModified: new Date(),
-      changeFrequency: "yearly",
-      priority: 1.0,
-    },
-    {
-      url: "https://www.flyeronic.com/about",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: "https://www.flyeronic.com/services/seo",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: "https://www.flyeronic.com/services/google-ads",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: "https://www.flyeronic.com/services/meta-ads",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: "https://www.flyeronic.com/services/website-development",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: "https://www.flyeronic.com/services/marketing-automation",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: "https://www.flyeronic.com/services/content-creation",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: "https://www.flyeronic.com/services/brand-films",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: "https://www.flyeronic.com/blog",
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.7,
-    },
-    {
-      url: "https://www.flyeronic.com/blog/digital-marketing-cost-indore",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.6,
-    },
-    {
-      url: "https://www.flyeronic.com/blog/choose-digital-marketing-agency-indore",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.6,
-    },
-    {
-      url: "https://www.flyeronic.com/blog/seo-real-estate-madhya-pradesh",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.6,
-    },
-    ...cityEntries,
-  ];
 }
