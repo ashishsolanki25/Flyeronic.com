@@ -27,10 +27,10 @@ export default function PrivacyPolicyPage() {
         <p>We keep enquiry information only as long as needed for the purposes above, and use reasonable technical and organisational safeguards. No online transmission is completely secure, so we cannot guarantee absolute security.</p>
       </LegalSection>
       <LegalSection heading="Your choices">
-        <p>You can ask us to access, correct, or delete the personal information you have shared, or withdraw consent for marketing messages, by emailing flyeronic.info@gmail.com. We handle personal data in line with applicable Indian law.</p>
+        <p>You can ask us to access, correct, or delete the personal information you have shared, or withdraw consent for marketing messages, by emailing team@flyeronic.com or flyeronic.info@gmail.com. We handle personal data in line with applicable Indian law.</p>
       </LegalSection>
       <LegalSection heading="Changes and contact">
-        <p>We may update this policy and will change the date above when we do. Questions: flyeronic.info@gmail.com, +91 9109176922, GRM Business Park, Super Corridor, Indore, MP.</p>
+        <p>We may update this policy and will change the date above when we do. Questions: team@flyeronic.com, flyeronic.info@gmail.com, +91 9109176922, GRM Business Park, Super Corridor, Indore, MP.</p>
       </LegalSection>
     </LegalPage>
   );

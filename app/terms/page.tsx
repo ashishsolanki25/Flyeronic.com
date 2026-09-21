@@ -25,7 +25,7 @@ export default function TermsPage() {
         <p>To the extent permitted by law, Flyeronic is not liable for indirect or consequential losses arising from use of this website or our services. Our total liability is limited to the fees paid for the relevant service.</p>
       </LegalSection>
       <LegalSection heading="Governing law">
-        <p>These terms are governed by the laws of India, and the courts at Indore, Madhya Pradesh have jurisdiction. Contact: flyeronic.info@gmail.com.</p>
+        <p>These terms are governed by the laws of India, and the courts at Indore, Madhya Pradesh have jurisdiction. Contact: team@flyeronic.com.</p>
       </LegalSection>
     </LegalPage>
   );

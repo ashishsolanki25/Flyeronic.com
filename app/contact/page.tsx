@@ -14,6 +14,7 @@ export const metadata = {
 const details = [
   { icon: MapPin, label: "Office", value: "GRM Business Park, Super Corridor, Indore, MP 452005", href: "https://www.google.com/maps?cid=13151350818409658901" },
   { icon: Phone, label: "Phone / WhatsApp", value: "+91 9109176922", href: "tel:+919109176922" },
+  { icon: Mail, label: "Team email", value: "team@flyeronic.com", href: "mailto:team@flyeronic.com" },
   { icon: Mail, label: "Email", value: "flyeronic.info@gmail.com", href: "mailto:flyeronic.info@gmail.com" },
   { icon: Clock, label: "Working hours", value: "Monday to Saturday, 9:00 AM – 6:00 PM" },
 ];

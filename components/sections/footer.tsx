@@ -65,6 +65,7 @@ const company = [
 
 const contact = [
   { icon: MapPin, text: "GRM Business Park, Super Corridor, Indore, MP", href: "https://www.google.com/maps?cid=13151350818409658901" },
+  { icon: Mail,   text: "team@flyeronic.com",        href: "mailto:team@flyeronic.com" },
   { icon: Mail,   text: "flyeronic.info@gmail.com",  href: "mailto:flyeronic.info@gmail.com" },
   { icon: Phone,  text: "+91 9109176922",             href: "tel:+919109176922" },
 ];
