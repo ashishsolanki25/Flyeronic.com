@@ -33,6 +33,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Digital Marketing Agency in Indore | Flyeronic",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Flyeronic — Digital Marketing Agency in Indore" }],
     description:
       "Leading digital marketing agency in Indore offering SEO, social media marketing, website design & lead generation services for local businesses. Get a free strategy call today.",
     type: "website",
@@ -42,6 +43,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
+    images: ["/og-image.png"],
     title: "Digital Marketing Agency in Indore | Flyeronic",
     description:
       "Leading digital marketing agency in Indore offering SEO, social media marketing, website design & lead generation services for local businesses. Get a free strategy call today.",
