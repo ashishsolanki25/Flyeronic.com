@@ -22,7 +22,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.flyeronic.com"),
-  title: "Digital Marketing Agency in Indore | Flyeronic",
+  title: "Digital Marketing Company & Agency in Indore | Flyeronic",
   description:
     "Leading digital marketing agency in Indore offering SEO, social media marketing, website design & lead generation services for local businesses. Get a free strategy call today.",
   verification: { google: "Z8ZIkOozfMT-whF-_mcSXASLAF_QdgyQBJhJNGABWUk" },
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     canonical: "https://www.flyeronic.com",
   },
   openGraph: {
-    title: "Digital Marketing Agency in Indore | Flyeronic",
+    title: "Digital Marketing Company & Agency in Indore | Flyeronic",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Flyeronic — Digital Marketing Agency in Indore" }],
     description:
       "Leading digital marketing agency in Indore offering SEO, social media marketing, website design & lead generation services for local businesses. Get a free strategy call today.",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     images: ["/og-image.png"],
-    title: "Digital Marketing Agency in Indore | Flyeronic",
+    title: "Digital Marketing Company & Agency in Indore | Flyeronic",
     description:
       "Leading digital marketing agency in Indore offering SEO, social media marketing, website design & lead generation services for local businesses. Get a free strategy call today.",
     creator: "@flyeronic",
