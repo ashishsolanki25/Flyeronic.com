@@ -1,0 +1,30 @@
+# Flyeronic
+
+> Flyeronic is a digital marketing agency in Indore, Madhya Pradesh, India (GRM Business Park, Super Corridor). We help local businesses, real estate developers, clinics and startups get more leads through SEO, Google Ads, Meta Ads, social media marketing, website development and marketing automation.
+
+## Main pages
+- [Home](https://www.flyeronic.com/): Digital marketing company and agency in Indore
+- [About](https://www.flyeronic.com/about): Who we are and how we work
+- [Contact](https://www.flyeronic.com/contact): Free marketing audit and strategy call
+- [Digital marketing in Indore](https://www.flyeronic.com/locations/indore): Local services in Super Corridor, Indore
+
+## Services
+- [SEO](https://www.flyeronic.com/services/seo)
+- [Local SEO](https://www.flyeronic.com/services/local-seo)
+- [Google Ads](https://www.flyeronic.com/services/google-ads)
+- [Meta Ads](https://www.flyeronic.com/services/meta-ads)
+- [Social media marketing](https://www.flyeronic.com/services/social-media-marketing)
+- [Lead generation](https://www.flyeronic.com/services/lead-generation)
+- [Website development](https://www.flyeronic.com/services/website-development)
+- [Marketing automation](https://www.flyeronic.com/services/marketing-automation)
+- [Content creation](https://www.flyeronic.com/services/content-creation)
+- [Brand films](https://www.flyeronic.com/services/brand-films)
+
+## Industries
+- [Real estate marketing](https://www.flyeronic.com/industries/real-estate)
+- [Clinics and hospitals](https://www.flyeronic.com/industries/clinics)
+
+## Guides
+- [Digital marketing cost in Indore](https://www.flyeronic.com/blog/digital-marketing-cost-indore)
+- [How to choose a digital marketing agency in Indore](https://www.flyeronic.com/blog/choose-digital-marketing-agency-indore)
+- [SEO for real estate in Madhya Pradesh](https://www.flyeronic.com/blog/seo-real-estate-madhya-pradesh)
