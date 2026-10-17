@@ -79,7 +79,7 @@ const localBusinessSchema = {
   "description": "Digital marketing agency in Indore offering SEO, Google Ads, Meta Ads, social media marketing, website development, and marketing automation.",
   "logo": "https://www.flyeronic.com/flyeronic-logo.svg",
   "email": ["team@flyeronic.com", "flyeronic.info@gmail.com"],
-  "hasMap": "https://www.google.com/maps?cid=13151350818409658901",
+  "hasMap": "https://www.google.com/maps?cid=13165389657053084181",
   "sameAs": [
     "https://www.instagram.com/flyeronic.co",
     "https://www.facebook.com/share/1MHTPVcQkZ/",
@@ -109,6 +109,10 @@ const localBusinessSchema = {
     { "@type": "AdministrativeArea", "name": "Dewas" },
     { "@type": "AdministrativeArea", "name": "Super Corridor" },
     { "@type": "AdministrativeArea", "name": "Vijay Nagar" },
+    { "@type": "AdministrativeArea", "name": "Palasia" },
+    { "@type": "AdministrativeArea", "name": "Bhawarkua" },
+    { "@type": "AdministrativeArea", "name": "Rajwada" },
+    { "@type": "AdministrativeArea", "name": "Bhopal" },
     { "@type": "AdministrativeArea", "name": "AB Road" }
   ],
   "openingHoursSpecification": {
@@ -121,8 +125,8 @@ const localBusinessSchema = {
       "Friday",
       "Saturday"
     ],
-    "opens": "09:00",
-    "closes": "18:00"
+    "opens": "09:30",
+    "closes": "19:30"
   }
 };
 
