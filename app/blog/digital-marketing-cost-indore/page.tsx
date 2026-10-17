@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { GlowMenu } from "@/components/ui/glow-menu";
 import { Footer } from "@/components/sections/footer";
 import { FinalCTA } from "@/components/sections/final-cta";
@@ -66,6 +67,17 @@ export default function DigitalMarketingCostPage() {
               A realistic, no-nonsense pricing breakdown for 2026 — so you know
               what’s fair before you talk to any agency, including us.
             </p>
+            <div className="relative mt-8 aspect-[16/9] overflow-hidden rounded-2xl shadow-lg">
+              <Image
+                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1400&q=80"
+                alt="Modern digital analytics workspace"
+                fill
+                priority
+                unoptimized
+                sizes="(max-width: 768px) 100vw, 900px"
+                className="object-cover"
+              />
+            </div>
           </div>
         </section>
 
