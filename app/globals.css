@@ -49,6 +49,11 @@ html, body {
   overflow-x: hidden;
 }
 
+/* Keep anchored sections clear of the sticky announcement bar and navigation. */
+section[id] {
+  scroll-margin-top: 7rem;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -239,6 +244,12 @@ a, button {
   outline: none;
 }
 
+.whatsapp-fab--hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(8px);
+}
+
 /* Accessible focus ring */
 .whatsapp-fab:focus-visible {
   outline: 3px solid #25D366;
@@ -310,15 +321,15 @@ a, button {
 /* ── Mobile: slightly smaller ── */
 @media (max-width: 640px) {
   .whatsapp-fab {
-    width: 52px;
-    height: 52px;
-    bottom: 20px;
-    right: 20px;
+    width: 48px;
+    height: 48px;
+    bottom: max(12px, env(safe-area-inset-bottom));
+    right: 12px;
   }
 
   .whatsapp-fab__icon {
-    width: 24px;
-    height: 24px;
+    width: 22px;
+    height: 22px;
   }
 
   /* Hide tooltip on touch screens */
