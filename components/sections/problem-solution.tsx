@@ -24,7 +24,7 @@ export function ProblemSolution() {
           <span className="inline-block px-4 py-1.5 mb-4 rounded-full bg-primary/5 text-primary text-sm font-medium">
             Why Flyeronic?
           </span>
-          <h2 className="font-heading text-3xl lg:text-5xl font-bold text-secondary mb-4">
+          <h2 className="font-heading text-3xl lg:text-5xl font-bold text-teal-800 mb-4">
             Stop Guessing. Start Growing.
           </h2>
           <p className="max-w-2xl mx-auto text-muted-foreground text-lg">
@@ -40,7 +40,7 @@ export function ProblemSolution() {
               <div className="w-10 h-10 rounded-xl bg-red-50 flex items-center justify-center">
                 <AlertCircle size={20} className="text-red-500" />
               </div>
-              <h3 className="font-heading text-xl font-semibold text-secondary">
+              <h3 className="font-heading text-xl font-semibold text-teal-800">
                 Without a System
               </h3>
             </div>
@@ -60,13 +60,13 @@ export function ProblemSolution() {
               <div className="w-10 h-10 rounded-xl bg-green-50 flex items-center justify-center">
                 <CheckCircle2 size={20} className="text-green-500" />
               </div>
-              <h3 className="font-heading text-xl font-semibold text-secondary">
+              <h3 className="font-heading text-xl font-semibold text-teal-800">
                 With Flyeronic
               </h3>
             </div>
             <ul className="space-y-4">
               {solutions.map((solution, i) => (
-                <li key={i} className="flex items-start gap-3 text-secondary">
+                <li key={i} className="flex items-start gap-3 text-teal-800">
                   <CheckCircle2 size={18} className="mt-0.5 text-green-500 shrink-0" />
                   {solution}
                 </li>

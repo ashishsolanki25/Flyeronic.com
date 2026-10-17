@@ -1,5 +1,7 @@
 "use client";
 
+import { useEffect, useState } from "react";
+
 /**
  * WhatsApp Floating Action Button
  * ─────────────────────────────────
@@ -13,6 +15,29 @@ export function WhatsAppButton() {
     "Hi, I'm interested in your services. Can you share more details?";
   const waUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
+  const [isObscured, setIsObscured] = useState(false);
+
+  useEffect(() => {
+    const targets = [
+      document.getElementById("contact"),
+      document.querySelector("footer"),
+    ].filter((target): target is Element => Boolean(target));
+
+    if (targets.length === 0 || !("IntersectionObserver" in window)) return;
+
+    const visibleTargets = new Set<Element>();
+    const observer = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) visibleTargets.add(entry.target);
+        else visibleTargets.delete(entry.target);
+      }
+      setIsObscured(visibleTargets.size > 0);
+    }, { threshold: 0.05 });
+
+    targets.forEach((target) => observer.observe(target));
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <a
       href={waUrl}
@@ -20,7 +45,7 @@ export function WhatsAppButton() {
       rel="noopener noreferrer"
       aria-label="Chat on WhatsApp"
       title="Chat on WhatsApp"
-      className="whatsapp-fab"
+      className={`whatsapp-fab${isObscured ? " whatsapp-fab--hidden" : ""}`}
     >
       {/* Animated pulse ring */}
       <span className="whatsapp-fab__ring" aria-hidden="true" />

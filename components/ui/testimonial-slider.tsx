@@ -113,7 +113,7 @@ export function TestimonialSlider({
               </div>
 
               {/* Quote text */}
-              <p className="text-xl md:text-2xl font-semibold text-secondary leading-relaxed mb-8">
+              <p className="text-xl md:text-2xl font-semibold text-teal-800 leading-relaxed mb-8">
                 &ldquo;{current.quote}&rdquo;
               </p>
 
@@ -129,7 +129,7 @@ export function TestimonialSlider({
                   />
                 </div>
                 <div>
-                  <div className="font-heading font-semibold text-secondary text-base">
+                  <div className="font-heading font-semibold text-teal-800 text-base">
                     {current.name}
                   </div>
                   <div className="text-sm text-muted-foreground">

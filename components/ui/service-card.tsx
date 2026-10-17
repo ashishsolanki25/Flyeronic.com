@@ -70,7 +70,7 @@ export function ServiceCard({
 
         {/* Arrow icon */}
         <div className="absolute top-3 right-3 w-8 h-8 rounded-lg bg-white/0 group-hover:bg-white/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 backdrop-blur-sm">
-          <ArrowUpRight size={16} className="text-secondary" />
+          <ArrowUpRight size={16} className="text-teal-800" />
         </div>
       </div>
 
@@ -83,7 +83,7 @@ export function ServiceCard({
             accent
           )}
         />
-        <h3 className="font-heading font-semibold text-base text-secondary group-hover:text-primary transition-colors duration-300 leading-snug">
+        <h3 className="font-heading font-semibold text-base text-teal-800 group-hover:text-primary transition-colors duration-300 leading-snug">
           {title}
         </h3>
       </div>

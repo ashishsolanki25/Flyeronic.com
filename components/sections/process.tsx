@@ -41,7 +41,7 @@ export function ProcessSection() {
           <span className="inline-block px-4 py-1.5 mb-4 rounded-full bg-primary/5 text-primary text-sm font-medium">
             Our Process
           </span>
-          <h2 className="font-heading text-3xl lg:text-4xl font-bold text-secondary mb-4">
+          <h2 className="font-heading text-3xl lg:text-4xl font-bold text-teal-800 mb-4">
             How We Work
           </h2>
           <p className="max-w-2xl mx-auto text-muted-foreground text-base" style={{ textAlign: "center" }}>
@@ -72,7 +72,7 @@ export function ProcessSection() {
                 {step.icon}
               </div>
 
-              <h3 className="font-heading text-base font-semibold text-secondary mb-2">
+              <h3 className="font-heading text-base font-semibold text-teal-800 mb-2">
                 {step.title}
               </h3>
               <p className="text-sm text-muted-foreground leading-relaxed flex-1">
