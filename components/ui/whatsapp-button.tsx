@@ -21,7 +21,7 @@ export function WhatsAppButton() {
     const targets = [
       document.getElementById("contact"),
       document.querySelector("footer"),
-    ].filter((target): target is Element => Boolean(target));
+    ].filter((target): target is HTMLElement => target !== null);
 
     if (targets.length === 0 || !("IntersectionObserver" in window)) return;
 
