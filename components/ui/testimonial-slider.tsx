@@ -26,6 +26,9 @@ export function TestimonialSlider({
   const [isPaused, setIsPaused] = useState(false);
   const [direction, setDirection] = useState(1);
 
+  // A missing/empty data set should render nothing instead of dereferencing undefined.
+  if (testimonials.length === 0) return null;
+
   const next = useCallback(() => {
     setDirection(1);
     setActive((prev) => (prev + 1) % testimonials.length);
