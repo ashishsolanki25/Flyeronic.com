@@ -92,10 +92,10 @@ const localBusinessSchema = {
   "priceRange": "$$",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "GRM Business Park, Super Corridor",
+    "streetAddress": "2nd Floor, GRM Business Park, Chota Bangrada Square, Super Corridor",
     "addressLocality": "Indore",
-    "addressRegion": "MP",
-    "postalCode": "452005",
+    "addressRegion": "Madhya Pradesh",
+    "postalCode": "453112",
     "addressCountry": "IN"
   },
   "geo": {
