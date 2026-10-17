@@ -156,9 +156,12 @@ export function GlowMenu() {
             Get Started
           </AnimatedButton>
           <button
+            type="button"
             onClick={() => setIsMobileOpen(!isMobileOpen)}
             className="lg:hidden p-2 rounded-lg text-foreground hover:bg-muted transition-colors"
-            aria-label="Toggle menu"
+            aria-label={isMobileOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={isMobileOpen}
+            aria-controls="mobile-navigation"
           >
             {isMobileOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
@@ -169,6 +172,7 @@ export function GlowMenu() {
       <AnimatePresence>
         {isMobileOpen && (
           <motion.div
+            id="mobile-navigation"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
