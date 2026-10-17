@@ -122,10 +122,10 @@ function validate(data: FormData): FormErrors {
 }
 
 /* ─── Field error label ─── */
-function FieldError({ msg }: { msg?: string }) {
+function FieldError({ msg, id }: { msg?: string; id: string }) {
   if (!msg) return null;
   return (
-    <p className="mt-1 text-xs text-rose-500 font-medium flex items-center gap-1">
+    <p id={id} role="alert" className="mt-1 text-xs text-rose-700 font-medium flex items-center gap-1">
       <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor" aria-hidden>
         <circle cx="6" cy="6" r="6" opacity=".15" />
         <path d="M6 3.5v3M6 8v.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
@@ -393,6 +393,8 @@ export function ContactSection() {
                       </label>
                       <input
                         id="contact-name"
+                        aria-invalid={Boolean(errors.name)}
+                        aria-describedby={errors.name ? "contact-name-error" : undefined}
                         name="name"
                         type="text"
                         required
@@ -401,7 +403,7 @@ export function ContactSection() {
                         placeholder="John Smith"
                         className={errors.name ? inputError : inputCls}
                       />
-                      <FieldError msg={errors.name} />
+                      <FieldError id="contact-name-error" msg={errors.name} />
                     </div>
 
                     {/* Email */}
@@ -411,6 +413,8 @@ export function ContactSection() {
                       </label>
                       <input
                         id="contact-email"
+                        aria-invalid={Boolean(errors.email)}
+                        aria-describedby={errors.email ? "contact-email-error" : undefined}
                         name="email"
                         type="email"
                         required
@@ -419,7 +423,7 @@ export function ContactSection() {
                         placeholder="john@company.com"
                         className={errors.email ? inputError : inputCls}
                       />
-                      <FieldError msg={errors.email} />
+                      <FieldError id="contact-email-error" msg={errors.email} />
                     </div>
                   </div>
 
@@ -432,6 +436,8 @@ export function ContactSection() {
                       </label>
                       <input
                         id="contact-phone"
+                        aria-invalid={Boolean(errors.phone)}
+                        aria-describedby={errors.phone ? "contact-phone-error" : undefined}
                         name="phone"
                         type="tel"
                         value={formData.phone}
@@ -439,7 +445,7 @@ export function ContactSection() {
                         placeholder="+91 99999 00000"
                         className={errors.phone ? inputError : inputCls}
                       />
-                      <FieldError msg={errors.phone} />
+                      <FieldError id="contact-phone-error" msg={errors.phone} />
                     </div>
 
                     {/* Company */}
@@ -494,6 +500,8 @@ export function ContactSection() {
                     </label>
                     <textarea
                       id="contact-message"
+                        aria-invalid={Boolean(errors.message)}
+                        aria-describedby={errors.message ? "contact-message-error" : undefined}
                       name="message"
                       rows={4}
                       value={formData.message}
@@ -501,7 +509,7 @@ export function ContactSection() {
                       placeholder="Describe your current marketing challenges and what you're hoping to achieve..."
                       className={`${errors.message ? inputError : inputCls} resize-none`}
                     />
-                    <FieldError msg={errors.message} />
+                    <FieldError id="contact-message-error" msg={errors.message} />
                   </div>
 
                   {/* ROW 5 — Submit (full width) */}
