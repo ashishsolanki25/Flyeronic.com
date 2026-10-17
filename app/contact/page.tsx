@@ -8,16 +8,16 @@ import { pageMeta } from "@/lib/page-meta";
 export const metadata = pageMeta({
   title: "Contact Flyeronic | Digital Marketing Agency, Super Corridor Indore",
   description:
-    "Contact Flyeronic, a digital marketing agency at GRM Business Park, Super Corridor, Indore. Call, WhatsApp, email, or book a free 30-minute strategy call.",
+    "Contact Flyeronic, a digital marketing agency at GRM Business Park, Chota Bangrada Square, Super Corridor, Indore. Call, WhatsApp, email, or book a free 30-minute strategy call.",
   path: "/contact",
 });
 
 const details = [
-  { icon: MapPin, label: "Office", value: "GRM Business Park, Super Corridor, Indore, MP 452005", href: "https://www.google.com/maps?cid=13151350818409658901" },
+  { icon: MapPin, label: "Office", value: "2nd Floor, GRM Business Park, Chota Bangrada Square, Super Corridor, Indore, Madhya Pradesh 453112, India", href: "https://www.google.com/maps?cid=13165389657053084181" },
   { icon: Phone, label: "Phone / WhatsApp", value: "+91 9109176922", href: "tel:+919109176922" },
   { icon: Mail, label: "Team email", value: "team@flyeronic.com", href: "mailto:team@flyeronic.com" },
   { icon: Mail, label: "Email", value: "flyeronic.info@gmail.com", href: "mailto:flyeronic.info@gmail.com" },
-  { icon: Clock, label: "Working hours", value: "Monday to Saturday, 9:00 AM – 6:00 PM" },
+  { icon: Clock, label: "Working hours", value: "Monday to Saturday, 9:30 AM – 7:30 PM" },
 ];
 
 export default function ContactPage() {
@@ -67,7 +67,7 @@ export default function ContactPage() {
             <div className="rounded-2xl overflow-hidden border border-border min-h-[320px]">
               <iframe
                 title="Flyeronic office on Google Maps"
-                src="https://www.google.com/maps?cid=13151350818409658901&output=embed"
+                src="https://www.google.com/maps?cid=13165389657053084181&output=embed"
                 className="w-full h-full min-h-[320px] border-0"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"

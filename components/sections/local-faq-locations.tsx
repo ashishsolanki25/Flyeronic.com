@@ -172,7 +172,7 @@ export function LocalFaqLocations() {
               <div className="pt-5 border-t border-border/60 flex flex-col gap-2">
                 <p className="text-xs font-semibold text-foreground uppercase tracking-widest">Head Office</p>
                 <p className="text-xs text-muted-foreground leading-relaxed">
-                  GRM Business Park, Super Corridor, Indore, MP - 452005
+                  2nd Floor, GRM Business Park, Chota Bangrada Square, Super Corridor, Indore, Madhya Pradesh 453112, India
                 </p>
                 <p className="text-xs text-muted-foreground">
                   Phone:{" "}

@@ -66,7 +66,7 @@ const company = [
 ];
 
 const contact = [
-  { icon: MapPin, text: "GRM Business Park, Super Corridor, Indore, MP", href: "https://www.google.com/maps?cid=13151350818409658901" },
+  { icon: MapPin, text: "2nd Floor, GRM Business Park, Chota Bangrada Square, Super Corridor, Indore, Madhya Pradesh 453112, India", href: "https://www.google.com/maps?cid=13165389657053084181" },
   { icon: Mail,   text: "team@flyeronic.com",        href: "mailto:team@flyeronic.com" },
   { icon: Mail,   text: "flyeronic.info@gmail.com",  href: "mailto:flyeronic.info@gmail.com" },
   { icon: Phone,  text: "+91 9109176922",             href: "tel:+919109176922" },
