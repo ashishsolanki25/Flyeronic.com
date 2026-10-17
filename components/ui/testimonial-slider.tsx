@@ -26,9 +26,6 @@ export function TestimonialSlider({
   const [isPaused, setIsPaused] = useState(false);
   const [direction, setDirection] = useState(1);
 
-  // A missing/empty data set should render nothing instead of dereferencing undefined.
-  if (testimonials.length === 0) return null;
-
   const next = useCallback(() => {
     setDirection(1);
     setActive((prev) => (prev + 1) % testimonials.length);
@@ -50,7 +47,7 @@ export function TestimonialSlider({
 
   // Auto-rotate
   useEffect(() => {
-    if (isPaused) return;
+    if (isPaused || testimonials.length === 0) return;
     const timer = setInterval(next, autoPlayInterval);
     return () => clearInterval(timer);
   }, [isPaused, next, autoPlayInterval]);
@@ -63,6 +60,8 @@ export function TestimonialSlider({
   }, [isPaused]);
 
   const current = testimonials[active];
+  // Keep hooks unconditional; render nothing when no testimonial data is supplied.
+  if (!current) return null;
 
   const variants = {
     enter: (d: number) => ({
