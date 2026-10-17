@@ -512,4 +512,12 @@ a, button {
   .announcement-bar__rec-dot {
     animation: none;
   }
+
+  .reveal,
+  .reveal.visible,
+  .reveal.active {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }

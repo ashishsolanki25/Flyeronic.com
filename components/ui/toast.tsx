@@ -38,9 +38,16 @@ function ToastItem({ toast, onRemove }: { toast: Toast; onRemove: (id: string) =
 
   const dismiss = useCallback(() => {
     const el = ref.current;
-    if (!el) return;
+    if (!el || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      onRemove(toast.id);
+      return;
+    }
     el.classList.add("toast--exit");
-    el.addEventListener("animationend", () => onRemove(toast.id), { once: true });
+    const fallback = window.setTimeout(() => onRemove(toast.id), 500);
+    el.addEventListener("animationend", () => {
+      window.clearTimeout(fallback);
+      onRemove(toast.id);
+    }, { once: true });
   }, [toast.id, onRemove]);
 
   /* Auto-dismiss after 5 s */

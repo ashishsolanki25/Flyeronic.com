@@ -47,7 +47,7 @@ export function TestimonialSlider({
 
   // Auto-rotate
   useEffect(() => {
-    if (isPaused) return;
+    if (isPaused || testimonials.length === 0) return;
     const timer = setInterval(next, autoPlayInterval);
     return () => clearInterval(timer);
   }, [isPaused, next, autoPlayInterval]);
@@ -60,6 +60,8 @@ export function TestimonialSlider({
   }, [isPaused]);
 
   const current = testimonials[active];
+  // Keep hooks unconditional; render nothing when no testimonial data is supplied.
+  if (!current) return null;
 
   const variants = {
     enter: (d: number) => ({
