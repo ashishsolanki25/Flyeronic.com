@@ -68,7 +68,7 @@ export function SparklesText({
   return (
     <span ref={containerRef} className={cn("relative inline-block", className)}>
       {/* Sparkles layer */}
-      <span className="absolute inset-0 pointer-events-none overflow-visible">
+      <span aria-hidden="true" className="absolute inset-0 pointer-events-none overflow-hidden">
         <AnimatePresence>
           {sparkles.map((sparkle) => (
             <motion.svg
