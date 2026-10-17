@@ -3,7 +3,7 @@ import { LegalPage, LegalSection } from "@/components/sections/legal-page";
 export const metadata = {
   title: "Terms of Service | Flyeronic",
   description: "The terms that apply when you use flyeronic.com and engage Flyeronic for digital marketing services.",
-  alternates: { canonical: "https://www.flyeronic.com/terms" },
+  alternates: { canonical: "https://www.flyeronic.com/terms-of-service" },
 };
 
 export default function TermsPage() {
