@@ -361,6 +361,10 @@
   outline: 3px solid var(--brand);
   outline-offset: 3px;
 }
+.qf-btn:disabled {
+  opacity: 0.65;
+  cursor: progress;
+}
 .qf-btn:active {
   transform: translateY(1px);
 }

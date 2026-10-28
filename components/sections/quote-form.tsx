@@ -3,6 +3,7 @@
 import { useRef, useState } from "react";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import { cn } from "@/lib/utils";
+import { useToast } from "@/components/ui/toast";
 import "./quote-form.css";
 
 const jakarta = Plus_Jakarta_Sans({
@@ -11,6 +12,9 @@ const jakarta = Plus_Jakarta_Sans({
   variable: "--qf-font",
   display: "swap",
 });
+
+// Same Web3Forms key the contact form uses, so quote requests land in the same inbox.
+const WEB3FORMS_ACCESS_KEY = "e8e2572f-466a-4820-8fc6-333b891a3f37";
 
 // Flyeronic WhatsApp number with country code, digits only.
 const WHATSAPP_NUMBER = "919109176922";
@@ -317,6 +321,8 @@ export function QuoteForm() {
   const [summary, setSummary] = useState("");
   const [status, setStatus] = useState("");
   const [summaryOpen, setSummaryOpen] = useState(false);
+  const [sending, setSending] = useState(false);
+  const { showToast } = useToast();
   const formRef = useRef<HTMLFormElement>(null);
   const summaryRef = useRef<HTMLPreElement>(null);
 
@@ -370,16 +376,61 @@ export function QuoteForm() {
     window.scrollTo({ top: 0, behavior: reduce() ? "auto" : "smooth" });
   };
 
-  const onSubmit = (e: React.FormEvent) => {
+  const sendEmail = async (text: string) => {
+    const get = (k: string) => (values[k] ?? "").trim() || "Not answered";
+    const payload = {
+      access_key: WEB3FORMS_ACCESS_KEY,
+      subject: `New Meta Ads Quote Request - ${get("client")}`,
+      from_name: "Flyeronic Quote Form",
+      name: get("client"),
+      phone: `+91 ${phoneDigits(get("phone"))}`,
+      industry: get("industry"),
+      products_or_services: get("projects"),
+      main_goal: get("goal"),
+      meta_ads_campaigns: get("campaigns"),
+      monthly_creatives: get("creatives"),
+      creative_type: get("creativeType"),
+      video_shooting: values.creativeType === "Static Designs" ? "Not needed (static designs only)" : get("shoot"),
+      meta_ads_account: get("account"),
+      monthly_ad_budget: get("budget"),
+      service_needed: get("service"),
+      additional_requirements: (values.notes ?? "").trim() || "None",
+      message: text,
+    };
+    const res = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify(payload),
+    });
+    const data = await res.json();
+    if (!data.success) throw new Error(data.message || "Submission failed");
+  };
+
+  const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!validate(cur)) return;
+    if (sending || !validate(cur)) return;
     if (!isLast) {
       goTo(cur + 1);
       return;
     }
-    setSummary(buildSummary(values));
-    setDone(true);
-    window.scrollTo({ top: 0, behavior: reduce() ? "auto" : "smooth" });
+    const text = buildSummary(values);
+    setSending(true);
+    try {
+      await sendEmail(text);
+      setSummary(text);
+      setDone(true);
+      showToast("success", "Request sent! 🎉", "Thank you! Our team will contact you shortly.");
+      window.scrollTo({ top: 0, behavior: reduce() ? "auto" : "smooth" });
+    } catch (err) {
+      console.error("Web3Forms error:", err);
+      showToast(
+        "error",
+        "Couldn't send request",
+        "Something went wrong. Please try again or contact us directly on WhatsApp."
+      );
+    } finally {
+      setSending(false);
+    }
   };
 
   const copySummary = async () => {
@@ -456,8 +507,8 @@ export function QuoteForm() {
                     Back
                   </button>
                 )}
-                <button type="submit" className="qf-btn primary">
-                  {isLast ? "Submit request" : "Continue"}
+                <button type="submit" className="qf-btn primary" disabled={sending}>
+                  {sending ? "Sending…" : isLast ? "Submit request" : "Continue"}
                 </button>
               </div>
             </form>
@@ -471,7 +522,10 @@ export function QuoteForm() {
                 </svg>
               </div>
               <h2>{firstName ? `Thank you, ${firstName}.` : "Thank you."}</h2>
-              <p>Your details are ready. Send them to the Flyeronic team and we will prepare your Meta Ads quotation.</p>
+              <p>
+                We have received your request. Our team will contact you shortly with your Meta Ads quotation.
+              </p>
+              <p>For a faster reply, you can also send the same details on WhatsApp.</p>
               <div className="qf-btns">
                 <a className="qf-btn primary" href={waUrl} target="_blank" rel="noopener noreferrer">
                   Send on WhatsApp
