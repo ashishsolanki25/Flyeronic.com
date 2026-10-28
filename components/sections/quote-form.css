@@ -87,6 +87,17 @@
   max-width: 44ch;
 }
 
+.qf-gloss {
+  margin: 14px 0 0;
+  max-width: 52ch;
+  font-size: 14px;
+  color: var(--muted);
+}
+.qf-gloss strong {
+  color: var(--ink);
+  font-weight: 700;
+}
+
 .qf-progress {
   position: sticky;
   top: 64px;

@@ -34,73 +34,199 @@ type Question = {
 
 type Step = { title: string; short: string; questions: Question[] };
 
-const STEPS: Step[] = [
-  {
-    title: "Your business",
-    short: "Business",
-    questions: [
-      { id: "client", type: "text", label: "Company / client name", ph: "e.g. Sharma Enterprises", req: true, ac: "organization" },
-      { id: "phone", type: "tel", label: "Contact number", ph: "98765 43210", req: true, prefix: "+91" },
-      { id: "projects", type: "choice", label: "How many products or services need promotion?", cols: 4, options: ["1", "2", "3", "4 or more"] },
-    ],
-  },
-  {
-    title: "Campaigns and creatives",
-    short: "Campaigns",
-    questions: [
-      {
-        id: "campaigns", type: "choice", label: "How many Meta Ads campaigns are required?", req: true, cols: 2,
-        help: "A campaign is one ad run on Facebook and Instagram with its own goal, audience and budget. For example, one campaign per product or per offer.",
-        options: ["1", "2–3", "4–5", "Need Recommendation"],
-      },
-      {
-        id: "creatives", type: "choice", label: "What is your monthly creative requirement?", req: true, cols: 2,
-        help: "Creatives are the ad designs and videos we make for your ads every month.",
-        options: ["1–4 creatives", "5–8 creatives", "9–12 creatives", "Need Recommendation"],
-      },
-      {
-        id: "creativeType", type: "choice", label: "Which creative services do you need?", cols: 3,
-        help: "Static designs are image ads like posters and banners. Video ads and Reels are short videos shown on Instagram and Facebook.",
-        options: ["Static Designs", "Video Ads / Reels", "Both"],
-      },
-      {
-        id: "shoot", type: "choice", label: "Do you need video shooting?", cols: 1,
-        help: "We can shoot videos for your ads at your business location. Choose \"No\" if you already have videos.",
-        options: ["Yes", "No, I will provide videos", "Need a separate quotation"],
-        showIf: (v) => v.creativeType !== "Static Designs",
-      },
-    ],
-  },
-  {
-    title: "Ad account and budget",
-    short: "Budget",
-    questions: [
-      {
-        id: "account", type: "choice", label: "Do you already have a Meta Ads account?", cols: 3,
-        help: "This is the account used to run ads on Facebook and Instagram. If you are not sure, choose \"Not Sure\" and we will check with you.",
-        options: ["Yes", "No", "Not Sure"],
-      },
-      {
-        id: "budget", type: "choice", label: "What is your monthly advertising budget?", req: true, cols: 2,
-        help: "Ad budget is the money paid to Meta to show your ads. It is separate from Flyeronic's management fee.",
-        options: ["₹5,000–₹10,000", "₹10,000–₹25,000", "₹25,000–₹50,000", "₹50,000+", "Not Decided"],
-      },
-      {
-        id: "service", type: "choice", label: "What services do you require?", req: true, cols: 1,
-        optHints: {
-          "Campaign Setup": "One-time work. We build your first campaigns and choose the right audience.",
-          "Monthly Ads Management": "Every month we run, watch and improve your ads to bring better leads.",
-          Both: "We set everything up first, then manage your ads every month.",
-        },
-        options: ["Campaign Setup", "Monthly Ads Management", "Both"],
-      },
-      { id: "notes", type: "area", label: "Any additional requirements?", ph: "Anything else we should know" },
-    ],
-  },
+type IndustryId = "real-estate" | "clinic" | "education" | "ecommerce" | "restaurant" | "services" | "other";
+
+const INDUSTRY_OPTIONS: { id: IndustryId; label: string }[] = [
+  { id: "real-estate", label: "Real Estate" },
+  { id: "clinic", label: "Clinic / Hospital" },
+  { id: "education", label: "Education / Coaching" },
+  { id: "ecommerce", label: "E-commerce / D2C" },
+  { id: "restaurant", label: "Restaurant / Café" },
+  { id: "services", label: "Local Services" },
+  { id: "other", label: "Other" },
 ];
 
+// Wording and examples that change with the chosen industry.
+type Profile = {
+  projectsLabel: string;
+  projectsHelp: string;
+  campaignEg: string;
+  creativeEg: string;
+  typeEg: string;
+  shootAt: string;
+  goalOptions: string[];
+  notesPh: string;
+};
+
+const PROFILES: Record<IndustryId, Profile> = {
+  "real-estate": {
+    projectsLabel: "How many projects need promotion?",
+    projectsHelp: "A project is one property you want to sell or rent, like a housing society, plot layout, villa scheme or commercial space.",
+    campaignEg: "For example, one campaign per project, or separate ones for site-visit bookings and plot sales.",
+    creativeEg: "For example, project walkthrough videos, floor-plan posters and launch-offer banners.",
+    typeEg: "For example, a drone or walkthrough video of your project, or a poster with price and location.",
+    shootAt: "at your project site or sample flat",
+    goalOptions: ["Site visit bookings", "Enquiry calls", "Buyer leads", "Brand awareness"],
+    notesPh: "e.g. project location, price range, launch date",
+  },
+  clinic: {
+    projectsLabel: "How many treatments or specialities need promotion?",
+    projectsHelp: "A speciality is one area of care, like dental, skin, hair or fertility. Each one can get its own ads.",
+    campaignEg: "For example, one campaign per treatment, such as dental implants or skin care.",
+    creativeEg: "For example, doctor introduction videos, treatment explainers and health-awareness posters.",
+    typeEg: "For example, a short video of the doctor explaining a treatment, or a poster for a health camp.",
+    shootAt: "at your clinic or hospital",
+    goalOptions: ["Appointment bookings", "Phone calls", "WhatsApp enquiries", "Brand awareness"],
+    notesPh: "e.g. treatments, doctor names, clinic timings",
+  },
+  education: {
+    projectsLabel: "How many courses or batches need promotion?",
+    projectsHelp: "A batch is one group of students who start together, like a NEET batch or a spoken-English course.",
+    campaignEg: "For example, one campaign per course, or one for admissions and one for a free demo class.",
+    creativeEg: "For example, topper result posters, teacher introduction videos and course-offer banners.",
+    typeEg: "For example, a student success video, or a poster with course fees and start date.",
+    shootAt: "at your classroom or campus",
+    goalOptions: ["Admission enquiries", "Demo class bookings", "Webinar sign-ups", "Brand awareness"],
+    notesPh: "e.g. course names, batch start dates, city",
+  },
+  ecommerce: {
+    projectsLabel: "How many products or categories need promotion?",
+    projectsHelp: "A category is a group of similar products, like sarees, skincare or sneakers.",
+    campaignEg: "For example, one campaign per product category, or one for new customers and one for repeat buyers.",
+    creativeEg: "For example, product photos, unboxing videos and sale-offer banners.",
+    typeEg: "For example, a product photo with price and offer, or a short unboxing or how-to-use video.",
+    shootAt: "at a studio or at your location",
+    goalOptions: ["Online sales", "Website visits", "WhatsApp orders", "Brand awareness"],
+    notesPh: "e.g. best-selling products, website link, sale dates",
+  },
+  restaurant: {
+    projectsLabel: "How many outlets or offers need promotion?",
+    projectsHelp: "An offer is a deal you want to push, like a festival menu, combo meal or discount.",
+    campaignEg: "For example, one campaign per outlet, or one for dine-in offers and one for home delivery.",
+    creativeEg: "For example, food photos, menu posters and short videos of dishes being made.",
+    typeEg: "For example, a menu poster with prices, or a short Reel of your signature dish.",
+    shootAt: "at your café or kitchen",
+    goalOptions: ["Table bookings", "Store visits", "Online orders", "Brand awareness"],
+    notesPh: "e.g. outlet locations, signature dishes, offers",
+  },
+  services: {
+    projectsLabel: "How many services need promotion?",
+    projectsHelp: "A service is one thing you sell, like AC repair, home cleaning, interior design or salon care.",
+    campaignEg: "For example, one campaign per service, or one for each city you work in.",
+    creativeEg: "For example, before-and-after photos, work-in-action videos and service-offer posters.",
+    typeEg: "For example, a before-and-after photo of your work, or a short video of your team at a job.",
+    shootAt: "at your work location",
+    goalOptions: ["Service enquiries", "Call bookings", "WhatsApp messages", "Brand awareness"],
+    notesPh: "e.g. services offered, areas you cover, working hours",
+  },
+  other: {
+    projectsLabel: "How many products or services need promotion?",
+    projectsHelp: "A product or service is anything you sell that you want more people to know about.",
+    campaignEg: "For example, one campaign per product or per offer.",
+    creativeEg: "",
+    typeEg: "",
+    shootAt: "at your business location",
+    goalOptions: ["Leads", "Sales", "Messages", "Brand awareness"],
+    notesPh: "Anything else we should know",
+  },
+};
+
+function industryId(label: string): IndustryId {
+  return INDUSTRY_OPTIONS.find((o) => o.label === label)?.id ?? "other";
+}
+
+const join = (...parts: string[]) => parts.filter(Boolean).join(" ");
+
+// Builds the three steps. Labels, help text, examples and goal options follow the chosen industry.
+function getSteps(industry: string): Step[] {
+  const p = PROFILES[industryId(industry)];
+  return [
+    {
+      title: "Your business",
+      short: "Business",
+      questions: [
+        { id: "client", type: "text", label: "Company / client name", ph: "e.g. Sharma Enterprises", req: true, ac: "organization" },
+        { id: "phone", type: "tel", label: "Contact number", ph: "98765 43210", req: true, prefix: "+91" },
+        {
+          id: "industry", type: "choice", label: "Which industry is your business in?", req: true, cols: 2,
+          help: "Choose the closest match. The next questions will use examples from your industry. D2C means a brand that sells directly to customers, without a middleman.",
+          options: INDUSTRY_OPTIONS.map((o) => o.label),
+        },
+        { id: "projects", type: "choice", label: p.projectsLabel, cols: 4, help: p.projectsHelp, options: ["1", "2", "3", "4 or more"] },
+      ],
+    },
+    {
+      title: "Campaigns and creatives",
+      short: "Campaigns",
+      questions: [
+        {
+          id: "goal", type: "choice", label: "What is your main goal?", cols: 2,
+          help: "A lead is a person who shows interest in your business, for example by calling, messaging or filling a form. Pick the result that matters most to you.",
+          options: p.goalOptions,
+        },
+        {
+          id: "campaigns", type: "choice", label: "How many Meta Ads campaigns are required?", req: true, cols: 2,
+          help: join(
+            "A campaign is one ad run on Facebook and Instagram with its own goal, audience and budget. Audience means the people who will see your ad.",
+            p.campaignEg
+          ),
+          options: ["1", "2–3", "4–5", "Need Recommendation"],
+        },
+        {
+          id: "creatives", type: "choice", label: "What is your monthly creative requirement?", req: true, cols: 2,
+          help: join("Creatives are the ad designs and videos we make for your ads every month.", p.creativeEg),
+          options: ["1–4 creatives", "5–8 creatives", "9–12 creatives", "Need Recommendation"],
+        },
+        {
+          id: "creativeType", type: "choice", label: "Which creative services do you need?", cols: 3,
+          help: join(
+            "Static designs are image ads like posters and banners. Video ads and Reels are short videos shown on Instagram and Facebook. A Reel is a short vertical video, usually under a minute.",
+            p.typeEg
+          ),
+          options: ["Static Designs", "Video Ads / Reels", "Both"],
+        },
+        {
+          id: "shoot", type: "choice", label: "Do you need video shooting?", cols: 1,
+          help: `We can shoot videos for your ads ${p.shootAt}. Choose "No" if you already have videos.`,
+          options: ["Yes", "No, I will provide videos", "Need a separate quotation"],
+          showIf: (v) => v.creativeType !== "Static Designs",
+        },
+      ],
+    },
+    {
+      title: "Ad account and budget",
+      short: "Budget",
+      questions: [
+        {
+          id: "account", type: "choice", label: "Do you already have a Meta Ads account?", cols: 3,
+          help: "This is the account used to run ads on Facebook and Instagram. It holds your ads and your payment method. If you are not sure, choose \"Not Sure\" and we will check with you.",
+          options: ["Yes", "No", "Not Sure"],
+        },
+        {
+          id: "budget", type: "choice", label: "What is your monthly advertising budget?", req: true, cols: 2,
+          help: "Ad budget (also called ad spend) is the money paid to Meta to show your ads. It is separate from Flyeronic's management fee, which is what we charge to plan, run and improve your ads.",
+          options: ["₹5,000–₹10,000", "₹10,000–₹25,000", "₹25,000–₹50,000", "₹50,000+", "Not Decided"],
+        },
+        {
+          id: "service", type: "choice", label: "What services do you require?", req: true, cols: 1,
+          help: "Ads management means we run your ads, watch the results and keep improving them.",
+          optHints: {
+            "Campaign Setup": "One-time work. We build your first campaigns and choose the right audience.",
+            "Monthly Ads Management": "Every month we run, watch and improve your ads to bring better leads.",
+            Both: "We set everything up first, then manage your ads every month.",
+          },
+          options: ["Campaign Setup", "Monthly Ads Management", "Both"],
+        },
+        { id: "notes", type: "area", label: "Any additional requirements?", ph: p.notesPh },
+      ],
+    },
+  ];
+}
+
 const LABELS = {
+  industry: "Industry",
   projects: "Products or services to promote",
+  goal: "Main goal",
   campaigns: "Meta Ads campaigns",
   creatives: "Monthly creatives",
   creativeType: "Creative type",
@@ -159,9 +285,11 @@ function buildSummary(values: Values) {
     "CLIENT",
     `Name: ${get("client")}`,
     `Contact: ${phone}`,
+    `${LABELS.industry}: ${na(v.industry)}`,
     `${LABELS.projects}: ${na(v.projects)}`,
     "",
     "SCOPE",
+    `${LABELS.goal}: ${na(v.goal)}`,
     `${LABELS.campaigns}: ${na(v.campaigns)}`,
     `${LABELS.creatives}: ${na(v.creatives)}`,
     `${LABELS.creativeType}: ${na(v.creativeType)}`,
@@ -192,8 +320,9 @@ export function QuoteForm() {
   const formRef = useRef<HTMLFormElement>(null);
   const summaryRef = useRef<HTMLPreElement>(null);
 
-  const step = STEPS[cur];
-  const isLast = cur === STEPS.length - 1;
+  const steps = getSteps(values.industry ?? "");
+  const step = steps[cur];
+  const isLast = cur === steps.length - 1;
 
   const reduce = () =>
     typeof window !== "undefined" &&
@@ -202,10 +331,12 @@ export function QuoteForm() {
   const setValue = (id: string, value: string) => {
     setValues((prev) => {
       const next = { ...prev, [id]: value };
-      // Drop answers to questions that are no longer shown.
-      STEPS.forEach((s) =>
+      const nextSteps = getSteps(next.industry ?? "");
+      // Drop answers to questions that are no longer shown, or whose options changed with the industry.
+      nextSteps.forEach((s) =>
         s.questions.forEach((q) => {
           if (q.showIf && !q.showIf(next)) next[q.id] = "";
+          if (q.id === "goal" && next.goal && !q.options?.includes(next.goal)) next.goal = "";
         })
       );
       return next;
@@ -216,7 +347,7 @@ export function QuoteForm() {
   const validate = (i: number) => {
     const nextErrors: Record<string, string> = {};
     let firstBad: string | null = null;
-    STEPS[i].questions.forEach((q) => {
+    steps[i].questions.forEach((q) => {
       if (!isVisible(q, values)) return;
       const v = (values[q.id] ?? "").trim();
       let msg = "";
@@ -285,6 +416,9 @@ export function QuoteForm() {
             Get your <em>Meta Ads</em> quotation
           </h1>
           <p className="qf-lede">Tell us about your business in 3 short steps. It takes about 2 minutes.</p>
+          <p className="qf-gloss">
+            <strong>Meta Ads</strong> are paid ads that show on Facebook and Instagram. We create and run them for you.
+          </p>
         </div>
 
         <div
@@ -297,7 +431,7 @@ export function QuoteForm() {
           aria-valuetext={done ? "All steps done" : `Step ${cur + 1} of 3, ${step.title}`}
         >
           <div className="qf-segs">
-            {STEPS.map((s, i) => (
+            {steps.map((s, i) => (
               <div key={s.short} className={cn("qf-seg", (done || i <= cur) && "on", !done && i === cur && "cur")}>
                 <i />
                 <span>0{i + 1} {s.short}</span>
@@ -357,6 +491,10 @@ export function QuoteForm() {
 
         <div className="qf-foot">
           <span>Meta ad spend is paid to Meta directly. Flyeronic&apos;s management fee is quoted separately.</span>
+          <span>
+            Ad spend is the money you pay Meta to show your ads. The management fee is what Flyeronic charges to plan, run
+            and improve them.
+          </span>
           <span>
             <strong>Flyeronic</strong> &middot; GRM Business Park, Super Corridor, Indore
           </span>
