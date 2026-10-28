@@ -419,7 +419,7 @@ export function QuoteForm() {
       await sendEmail(text);
       setSummary(text);
       setDone(true);
-      showToast("success", "Request sent! 🎉", "Thank you! We'll prepare your Meta Ads quotation and get back to you soon.");
+      showToast("success", "Request sent! 🎉", "Thank you! Our team will contact you shortly.");
       window.scrollTo({ top: 0, behavior: reduce() ? "auto" : "smooth" });
     } catch (err) {
       console.error("Web3Forms error:", err);
@@ -523,9 +523,9 @@ export function QuoteForm() {
               </div>
               <h2>{firstName ? `Thank you, ${firstName}.` : "Thank you."}</h2>
               <p>
-                Your details have reached the Flyeronic team and we will prepare your Meta Ads quotation. For a faster
-                reply, you can also send the same details on WhatsApp.
+                We have received your request. Our team will contact you shortly with your Meta Ads quotation.
               </p>
+              <p>For a faster reply, you can also send the same details on WhatsApp.</p>
               <div className="qf-btns">
                 <a className="qf-btn primary" href={waUrl} target="_blank" rel="noopener noreferrer">
                   Send on WhatsApp
