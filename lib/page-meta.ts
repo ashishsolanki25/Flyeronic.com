@@ -23,8 +23,8 @@ export function pageMeta({
       type: "website",
       siteName: "Flyeronic",
       locale: "en_IN",
-      images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Flyeronic — Digital Marketing Agency in Indore" }],
+      images: [{ url: "/og-image.jpg", width: 600, height: 315, alt: "Flyeronic — Digital Marketing Agency in Indore" }],
     },
-    twitter: { card: "summary_large_image", title, description, creator: "@flyeronic", images: ["/og-image.png"] },
+    twitter: { card: "summary_large_image", title, description, creator: "@flyeronic", images: ["/og-image.jpg"] },
   };
 }
