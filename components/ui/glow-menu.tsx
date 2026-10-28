@@ -15,6 +15,7 @@ import {
   X,
   BookOpen,
   Info,
+  FileText,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -31,11 +32,13 @@ const menuItems: MenuItem[] = [
   { label: "Case Studies", href: "/#case-studies", icon: <FolderOpen size={16} /> },
   { label: "Blog",         href: "/blog",          icon: <BookOpen size={16} /> },
   { label: "Contact",      href: "/#contact",      icon: <Mail size={16} /> },
+  { label: "Get a Quote",  href: "/quote",         icon: <FileText size={16} /> },
 ];
 
 function getPathActiveItem(pathname: string): string | null {
   if (pathname.startsWith("/about")) return "About";
   if (pathname.startsWith("/blog")) return "Blog";
+  if (pathname.startsWith("/quote")) return "Get a Quote";
   if (pathname.startsWith("/services")) return "Services";
   if (pathname.startsWith("/locations")) return "Services";
   return null;
