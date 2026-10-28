@@ -8,6 +8,7 @@ const routes: { path: string; priority: number; changeFrequency: "weekly" | "mon
   { path: "", priority: 1.0, changeFrequency: "monthly", lastModified: "2026-09-21" },
   { path: "/about", priority: 0.7, changeFrequency: "monthly", lastModified: "2026-09-21" },
   { path: "/contact", priority: 0.7, changeFrequency: "monthly", lastModified: "2026-09-21" },
+  { path: "/quote", priority: 0.8, changeFrequency: "monthly", lastModified: "2026-10-28" },
   { path: "/locations/indore", priority: 0.9, changeFrequency: "monthly", lastModified: "2026-09-21" },
   { path: "/services/seo", priority: 0.8, changeFrequency: "monthly", lastModified: "2026-07-27" },
   { path: "/services/local-seo", priority: 0.9, changeFrequency: "monthly", lastModified: "2026-09-21" },
