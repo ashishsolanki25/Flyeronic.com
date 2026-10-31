@@ -8,6 +8,7 @@ export const metadata = pageMeta({
   description:
     "Tell Flyeronic about your business in 3 short steps and get a Meta Ads (Facebook and Instagram) quotation. Takes about 2 minutes.",
   path: "/quote",
+  image: { url: "/og-quote.png", alt: "Get a Meta Ads quotation from Flyeronic, Indore" },
 });
 
 export default function QuotePage() {
