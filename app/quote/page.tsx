@@ -4,9 +4,9 @@ import { QuoteForm } from "@/components/sections/quote-form";
 import { pageMeta } from "@/lib/page-meta";
 
 export const metadata = pageMeta({
-  title: "Get a Meta Ads Quotation | Flyeronic, Indore",
+  title: "Get a Digital Marketing Quotation | Flyeronic, Indore",
   description:
-    "Tell Flyeronic about your business in 3 short steps and get a Meta Ads (Facebook and Instagram) quotation. Takes about 2 minutes.",
+    "Choose the services you need, from Meta Ads, Google Ads and SEO to social media, websites and lead generation, and get a quotation from Flyeronic. Takes about 2 minutes.",
   path: "/quote",
 });
 
